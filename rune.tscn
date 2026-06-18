@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://5o601y0mv1gd"]
+
+[ext_resource type="Texture2D" uid="uid://pjlktx4pvide" path="res://assets/minesweeper.png" id="1_ad464"]
+[ext_resource type="Script" uid="uid://xwi6brhpduiy" path="res://rune.gd" id="2_nsj3i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkdmd"]
+atlas = ExtResource("1_ad464")
+region = Rect2(0, 0, 32, 32)
+
+[node name="Rune" type="TextureButton" unique_id=221826]
+offset_right = 32.0
+offset_bottom = 32.0
+texture_normal = SubResource("AtlasTexture_vkdmd")
+script = ExtResource("2_nsj3i")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

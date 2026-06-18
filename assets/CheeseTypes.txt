@@ -1,0 +1,8 @@
+1 - American
+2 - Blue
+3 - Brie
+4 - Pepper Jack
+5 - Feta
+6 - Swiss
+7 - Cheddar
+8 - Bocconcini (mozzarella)
