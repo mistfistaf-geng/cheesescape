@@ -19,6 +19,7 @@ func create_grid():
 			var rune = RUNE_SCENE.instantiate()
 			rune.position = Vector2(x, y) * rune.rune_size
 			rune.rune_pressed.connect(_on_rune_pressed.bind(x,y))
+			rune.middle_press.connect(_on_middle_press.bind(x,y))
 			runes[y].append(rune)
 			$Grid.add_child(rune)
 	calculate_adjacent_mines()
@@ -73,14 +74,13 @@ func _on_rune_pressed(x: int, y: int):
 		reveal_rune_and_neighbors(x,y)
 		if check_win_condition():
 			game_won()
-		
+
 func reveal_rune_and_neighbors(x: int, y: int):
 	if x < 0 or y < 0 or x >= cols or y >= rows:
 		return
 	var rune = runes[y][x]
 	if rune.is_revealed or rune.is_mine:
-		return
-	
+		return	
 	rune.reveal_rune()
 	
 	# If no adjacent mines, reveal neighbors
@@ -89,6 +89,40 @@ func reveal_rune_and_neighbors(x: int, y: int):
 			for dx in range(-1, 2):
 				if dx != 0 or dy != 0:
 					reveal_rune_and_neighbors(x + dx, y + dy)
+
+func _on_middle_press(x: int, y: int):
+	var rune = runes[y][x]
+	if not rune.is_revealed:
+		return	
+	var mine_count: int = rune.adjacent_mines;
+	var correct_count: int = 0;
+	
+	for dy in range(-1, 2):
+		for dx in range(-1, 2):
+			if dx != 0 or dy != 0:
+				if (x + dx) >= 0 and (y + dy) >= 0 and (x + dx) < cols and (y + dy) < rows:
+					var neighbor = runes[y + dy][x + dx]
+					if neighbor.is_flagged and neighbor.is_mine:
+						correct_count += 1
+					if not neighbor.is_flagged and neighbor.is_mine:
+						game_over()
+	if mine_count == correct_count:
+		reveal_neighbors_middle_press(x,y)
+		if check_win_condition():
+			game_won()
+			
+func reveal_neighbors_middle_press(x: int, y: int):
+	if x < 0 or y < 0 or x >= cols or y >= rows:
+		return
+	var rune = runes[y][x]
+	if rune.is_flagged:
+		return	
+	rune.reveal_rune()
+	
+	for dy in range(-1, 2):
+		for dx in range(-1, 2):
+			if dx != 0 or dy != 0:
+				reveal_rune_and_neighbors(x + dx, y + dy)
 
 # Reveal all mines and end game
 func game_over():

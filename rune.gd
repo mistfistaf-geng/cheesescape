@@ -7,6 +7,7 @@ var adjacent_mines: int = 0
 var is_flagged: bool = false
 
 signal rune_pressed
+signal middle_press
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		match event.button_index:
@@ -16,7 +17,9 @@ func _on_gui_input(event: InputEvent) -> void:
 			MOUSE_BUTTON_RIGHT:
 				if !is_revealed:
 					toggle_flagging()
-					
+			MOUSE_BUTTON_MIDDLE:
+				if is_revealed:
+					emit_signal("middle_press")
 func toggle_flagging():
 	is_flagged = !is_flagged;
 	if is_flagged:
