@@ -5,11 +5,21 @@ const RUNE_SCENE = preload("res://rune.tscn")
 @export var rows: int = 18 # Number of rows
 @export var cols: int = 18 # Number of columns
 @export var num_mines: int = 40
+@export var num_flags: int = 0
+@export var current_score: int = 0
 var runes = [] #2D array to store rune instances
 var first_click_complete = false
+var clock
+var mines
+var score
 
 func _ready():
 	create_grid()
+	clock = get_node("ColorRect/Clock")
+	mines = get_node("ColorRect/Mines/CurrentMines")
+	score = get_node("ColorRect/Score/CurrentScore")
+	mines.text = str(num_mines)
+	score.text = str(current_score)
 	
 func create_grid():
 	# Create runes and place them in 2D array
@@ -20,6 +30,7 @@ func create_grid():
 			rune.position = Vector2(x, y) * rune.rune_size
 			rune.rune_pressed.connect(_on_rune_pressed.bind(x,y))
 			rune.middle_press.connect(_on_middle_press.bind(x,y))
+			rune.flag_place.connect(_on_flag_place.bind(x,y))
 			runes[y].append(rune)
 			$Grid.add_child(rune)
 	calculate_adjacent_mines()
@@ -67,8 +78,10 @@ func _on_rune_pressed(x: int, y: int):
 		for pos in mine_positions:
 			runes[pos.y][pos.x].is_mine = true
 		calculate_adjacent_mines()
+		start_timer()
 		
 	if rune.is_mine:
+		rune.fail()
 		game_over()
 	else:
 		reveal_rune_and_neighbors(x,y)
@@ -82,6 +95,8 @@ func reveal_rune_and_neighbors(x: int, y: int):
 	if rune.is_revealed or rune.is_mine:
 		return	
 	rune.reveal_rune()
+	current_score += rune.adjacent_mines
+	score.text = str(current_score)
 	
 	# If no adjacent mines, reveal neighbors
 	if rune.adjacent_mines == 0:
@@ -119,20 +134,30 @@ func reveal_neighbors_middle_press(x: int, y: int):
 		return	
 	rune.reveal_rune()
 	
+	
 	for dy in range(-1, 2):
 		for dx in range(-1, 2):
 			if dx != 0 or dy != 0:
 				reveal_rune_and_neighbors(x + dx, y + dy)
+				
+func _on_flag_place(x: int, y: int):
+	var rune = runes[y][x]
+	if rune.is_flagged:
+		num_flags += 1
+	else:
+		num_flags -= 1
+	mines.text = str(num_mines - num_flags)
 
 # Reveal all mines and end game
 func game_over():
 	for row in runes:
 		for rune in row:
 			rune.disabled = true;
-			if rune.is_mine:
+			if rune.is_mine and not rune.is_revealed:
 				rune.reveal_rune()
-	$ColorRect/Label.text = "Game Over!"
-	$ColorRect/Label.visible = true;
+	$ColorRect/Title.text = "Game Over!"
+	$ColorRect/Title.visible = true;
+	stop_timer()
 
 func check_win_condition():
 	for row in runes:
@@ -146,19 +171,53 @@ func game_won():
 	for row in runes:
 		for rune in row:
 			rune.disabled = true
-	$ColorRect/Label.text = "You Won!"
-	$ColorRect/Label.visible = true;
+	$ColorRect/Title.text = "You Won!"
+	$ColorRect/Title.visible = true;
+	stop_timer()
 	
 func restart():
 	first_click_complete = false
 	for child in $Grid.get_children():
 		child.queue_free()
 	runes.clear()
-	
-	$ColorRect/Label.text = "Trap all the Dormies!"
-	$ColorRect/Label.visible = true
+	current_score = 0
+	score.text = str(current_score)
+	restart_timer()
+	$ColorRect/Title.text = "Trap all the Dormies!"
+	$ColorRect/Title.visible = true
 	
 	create_grid()
 	
 func _on_restart_button_pressed() -> void:
 	restart()
+
+var timer_running: bool = false
+var current_time: float = 0.0
+
+func start_timer() -> void:
+	current_time = 0.0
+	timer_running = true
+
+func stop_timer() -> void:
+	timer_running = false
+
+func restart_timer() -> void:
+	current_time = 0.0
+	timer_running = false
+
+func _process(delta: float) -> void:
+	if timer_running:
+		current_time += delta
+	clock.text = convert_time_to_string(current_time)
+	
+func convert_time_to_string(time: float) -> String:
+	var hours: int = int(time / (60.0 * 60.0))
+	var minutes: int = int(time /60.0) % 60
+	var seconds: int = int(time) % 60
+	var miliseconds: int = int(time * 1000.0) % 1000
+	var string: String = "%02d.%03d" % [seconds, miliseconds]
+	if minutes > 0 or hours > 0:
+		string = string.insert(0, ("02d:" if hours > 0 else "%d:") % minutes)
+	if hours > 0:
+		string = string.insert(0, "%d:" % hours)
+	return string

@@ -8,6 +8,7 @@ var is_flagged: bool = false
 
 signal rune_pressed
 signal middle_press
+signal flag_place
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		match event.button_index:
@@ -17,6 +18,7 @@ func _on_gui_input(event: InputEvent) -> void:
 			MOUSE_BUTTON_RIGHT:
 				if !is_revealed:
 					toggle_flagging()
+					emit_signal("flag_place")
 			MOUSE_BUTTON_MIDDLE:
 				if is_revealed:
 					emit_signal("middle_press")
@@ -31,7 +33,11 @@ var rune_size: Vector2 = Vector2(32,32)
 
 func _ready() -> void:
 	texture_normal = texture_normal.duplicate()
-	
+
+func fail():
+	is_revealed = true
+	texture_normal.region = Rect2(Vector2(204,0),rune_size)
+
 func reveal_rune():
 	is_revealed = true
 	if is_mine:

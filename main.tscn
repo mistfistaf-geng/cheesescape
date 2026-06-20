@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://hw2ps5xl01xx"]
 
-[ext_resource type="Script" uid="uid://cmn1prqjgk42d" path="res://game.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://cmn1prqjgk42d" path="res://scripts/game.gd" id="1_ig7tw"]
 
 [node name="Main" type="Node2D" unique_id=17708068]
 
@@ -15,16 +15,63 @@ offset_right = 576.0
 offset_bottom = 64.0
 color = Color(0.86701834, 0.6676658, 0.09494736, 1)
 
-[node name="Label" type="Label" parent="Game/ColorRect" unique_id=1832405216]
+[node name="Title" type="Label" parent="Game/ColorRect" unique_id=1832405216]
+z_index = 1
 layout_mode = 0
+offset_left = 173.0
 offset_top = -3.0
-offset_right = 576.0
-offset_bottom = 64.0
-theme_override_font_sizes/font_size = 48
+offset_right = 403.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 24
 text = "Trap all the Dormies!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Clock" type="Label" parent="Game/ColorRect" unique_id=712857970]
+layout_mode = 0
+offset_left = 441.0
+offset_right = 568.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 32
+text = "0:00:000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="Game/ColorRect" unique_id=1304436110]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 30.0
+offset_right = 161.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 24
+text = "Score:"
+vertical_alignment = 1
+
+[node name="CurrentScore" type="Label" parent="Game/ColorRect/Score" unique_id=2063048739]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 140.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="Mines" type="Label" parent="Game/ColorRect" unique_id=11058380]
+layout_mode = 0
+offset_left = 40.0
+offset_right = 161.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 24
+text = "Mines:"
+vertical_alignment = 1
+
+[node name="CurrentMines" type="Label" parent="Game/ColorRect/Mines" unique_id=1822667299]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 140.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 24
+text = "0"
 
 [node name="RestartButton" type="Button" parent="Game" unique_id=609923733]
 offset_top = 640.0

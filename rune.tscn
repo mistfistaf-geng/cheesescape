@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://5o601y0mv1gd"]
 
 [ext_resource type="Texture2D" uid="uid://pjlktx4pvide" path="res://assets/minesweeper.png" id="1_ad464"]
-[ext_resource type="Script" uid="uid://xwi6brhpduiy" path="res://rune.gd" id="2_nsj3i"]
+[ext_resource type="Script" uid="uid://xwi6brhpduiy" path="res://scripts/rune.gd" id="2_nsj3i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vkdmd"]
 atlas = ExtResource("1_ad464")
