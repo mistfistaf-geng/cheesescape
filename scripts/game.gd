@@ -120,6 +120,7 @@ func _on_middle_press(x: int, y: int):
 					if neighbor.is_flagged and neighbor.is_mine:
 						correct_count += 1
 					if not neighbor.is_flagged and neighbor.is_mine:
+						neighbor.fail()
 						game_over()
 	if mine_count == correct_count:
 		reveal_neighbors_middle_press(x,y)
