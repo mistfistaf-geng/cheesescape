@@ -1,0 +1,199 @@
+[gd_scene format=3 uid="uid://bo0bwm1mfxxas"]
+
+[ext_resource type="Script" uid="uid://bovxqdgc5w0yv" path="res://scripts/titlescreen.gd" id="1_v6p8y"]
+[ext_resource type="Texture2D" uid="uid://b0g4q702xtdxx" path="res://assets/icon.png" id="2_ak2if"]
+[ext_resource type="Texture2D" uid="uid://cmfrtmr0c7pew" path="res://assets/lock.png" id="3_ig5kc"]
+[ext_resource type="Texture2D" uid="uid://xj2j78kgpyp5" path="res://assets/unlock.png" id="4_05l2w"]
+
+[sub_resource type="Theme" id="Theme_v6p8y"]
+
+[node name="TitleScreen" type="Control" unique_id=1074626392]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v6p8y")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1307042386]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 672.0
+color = Color(1, 0.84705883, 0, 1)
+
+[node name="NewGameButton" type="Button" parent="ColorRect" unique_id=305814625]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 454.0
+offset_right = 353.0
+offset_bottom = 503.0
+theme = SubResource("Theme_v6p8y")
+text = "New Game"
+
+[node name="OptionsButton" type="Button" parent="ColorRect" unique_id=289627670]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 503.0
+offset_right = 353.0
+offset_bottom = 552.0
+text = "Options"
+
+[node name="ExtrasButton" type="Button" parent="ColorRect" unique_id=1305046758]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 552.0
+offset_right = 353.0
+offset_bottom = 601.0
+text = "Extras"
+
+[node name="Icon" type="Sprite2D" parent="ColorRect" unique_id=125306945]
+position = Vector2(288.00003, 275)
+scale = Vector2(7, 7)
+texture = ExtResource("2_ak2if")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect" unique_id=1462124160]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 68.0
+offset_right = 399.0
+offset_bottom = 184.0
+theme_override_colors/default_color = Color(1, 0.47058824, 0, 1)
+theme_override_font_sizes/normal_font_size = 33
+text = "CHEESESCAPE"
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1449704699]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 413.0
+offset_right = 486.0
+offset_bottom = 636.0
+color = Color(1, 0.26666668, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect2" unique_id=948611764]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 381.0
+offset_bottom = 211.0
+color = Color(1, 0.6156863, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect2/ColorRect" unique_id=299276202]
+z_index = 1
+layout_mode = 0
+offset_left = -14.0
+offset_top = -4.0
+offset_right = 380.0
+offset_bottom = 36.0
+theme_override_colors/default_color = Color(1, 0.80784315, 0, 1)
+text = "Select your difficulty:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ColorRect2/ColorRect" unique_id=643717240]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 36.0
+offset_right = 262.0
+offset_bottom = 74.0
+text = "Easy"
+
+[node name="Button2" type="Button" parent="ColorRect2/ColorRect" unique_id=586334426]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 74.0
+offset_right = 262.0
+offset_bottom = 112.0
+text = "Medium"
+
+[node name="Button3" type="Button" parent="ColorRect2/ColorRect" unique_id=672905251]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 112.0
+offset_right = 262.0
+offset_bottom = 150.0
+text = "Hard"
+
+[node name="Button4" type="Button" parent="ColorRect2/ColorRect" unique_id=952330153]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 150.0
+offset_right = 262.0
+offset_bottom = 188.0
+text = "Custom"
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect2" unique_id=629804355]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 381.0
+offset_bottom = 211.0
+color = Color(1, 0.6156863, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect2/ColorRect2" unique_id=1029983403]
+z_index = 1
+layout_mode = 0
+offset_left = -14.0
+offset_top = -4.0
+offset_right = 380.0
+offset_bottom = 36.0
+theme_override_colors/default_color = Color(1, 0.80784315, 0, 1)
+text = "Select your difficulty:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ColorRect2/ColorRect2" unique_id=949880088]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 36.0
+offset_right = 262.0
+offset_bottom = 74.0
+text = "Easy"
+
+[node name="Button2" type="Button" parent="ColorRect2/ColorRect2" unique_id=1631636512]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 74.0
+offset_right = 262.0
+offset_bottom = 112.0
+text = "Medium"
+
+[node name="Button3" type="Button" parent="ColorRect2/ColorRect2" unique_id=1319883560]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 112.0
+offset_right = 262.0
+offset_bottom = 150.0
+text = "Hard"
+
+[node name="Button4" type="Button" parent="ColorRect2/ColorRect2" unique_id=1138640197]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 150.0
+offset_right = 262.0
+offset_bottom = 188.0
+text = "Custom"
+
+[node name="Lock" type="Sprite2D" parent="ColorRect2/ColorRect2" unique_id=915445590]
+position = Vector2(89.00001, 131.00003)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_ig5kc")
+
+[node name="Lock2" type="Sprite2D" parent="ColorRect2/ColorRect2" unique_id=354442119]
+position = Vector2(89, 93)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_ig5kc")
+
+[node name="Lock3" type="Sprite2D" parent="ColorRect2/ColorRect2" unique_id=470889895]
+position = Vector2(89.00001, 169.00003)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_ig5kc")
+
+[node name="Unlock" type="Sprite2D" parent="ColorRect2/ColorRect2" unique_id=1767941407]
+position = Vector2(89, 55)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_05l2w")
+
+[connection signal="pressed" from="ColorRect/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="ColorRect/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="ColorRect/ExtrasButton" to="." method="_on_extras_pressed"]

@@ -74,10 +74,20 @@ theme_override_font_sizes/font_size = 24
 text = "0"
 
 [node name="RestartButton" type="Button" parent="Game" unique_id=609923733]
+offset_left = 288.0
 offset_top = 640.0
 offset_right = 576.0
 offset_bottom = 672.0
 theme_override_font_sizes/font_size = 16
 text = "Restart Game"
 
+[node name="MainMenuButton" type="Button" parent="Game" unique_id=674864190]
+offset_top = 640.0
+offset_right = 288.0
+offset_bottom = 672.0
+theme_override_font_sizes/font_size = 16
+text = "Main Menu"
+
 [connection signal="pressed" from="Game/RestartButton" to="Game" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Game/MainMenuButton" to="Game" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Game/MainMenuButton" to="Game" method="_on_main_menu_button_pressed"]

@@ -222,3 +222,13 @@ func convert_time_to_string(time: float) -> String:
 	if hours > 0:
 		string = string.insert(0, "%d:" % hours)
 	return string
+
+func _on_main_menu_button_pressed() -> void:
+	first_click_complete = false
+	for child in $Grid.get_children():
+		child.queue_free()
+	runes.clear()
+	current_score = 0
+	score.text = str(current_score)
+	restart_timer()
+	get_tree().change_scene_to_file("res://title_screen.tscn")
