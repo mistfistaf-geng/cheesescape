@@ -120,13 +120,26 @@ func _on_middle_press(x: int, y: int):
 					var neighbor = runes[y + dy][x + dx]
 					if neighbor.is_flagged and neighbor.is_mine:
 						correct_count += 1
-					if not neighbor.is_flagged and neighbor.is_mine:
+					elif neighbor.is_flagged and not neighbor.is_mine:
+						detonate(x,y)
+						game_over()
 						return
+						
 	if mine_count == correct_count:
 		reveal_neighbors_middle_press(x,y)
 		if check_win_condition():
 			game_won()
 			
+func detonate(x: int, y: int):
+	var rune = runes[y][x]
+	for dy in range(-1, 2):
+		for dx in range(-1, 2):
+			if dx != 0 or dy != 0:
+				if (x + dx) >= 0 and (y + dy) >= 0 and (x + dx) < cols and (y + dy) < rows:
+					var neighbor = runes[y + dy][x + dx]
+					if not neighbor.is_flagged and neighbor.is_mine:
+						neighbor.fail()
+		
 func reveal_neighbors_middle_press(x: int, y: int):
 	if x < 0 or y < 0 or x >= cols or y >= rows:
 		return
@@ -146,7 +159,10 @@ func _on_flag_place(x: int, y: int):
 		num_flags += 1
 	else:
 		num_flags -= 1
-	mines.text = str(Global.num_mines - num_flags)
+	if (Global.num_mines - num_flags) >= 0:
+		mines.text = str(Global.num_mines - num_flags)
+	else:
+		mines.text = str(0)
 	
 func _on_flag_nieghbors(x: int, y: int):
 	if x < 0 or y < 0 or x >= cols or y >= rows:
@@ -169,7 +185,10 @@ func _on_flag_nieghbors(x: int, y: int):
 			if not neighbor.is_flagged:
 				num_flags += 1
 				neighbor.toggle_flagging()
-	mines.text = str(Global.num_mines - num_flags)
+	if (Global.num_mines - num_flags) >= 0:
+		mines.text = str(Global.num_mines - num_flags)
+	else:
+		mines.text = str(0)
 	
 # Reveal all mines and end game
 func game_over():
