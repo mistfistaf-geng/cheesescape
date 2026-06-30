@@ -23,6 +23,7 @@ Global="*uid://4gcl2lh2mhmp"
 
 window/size/viewport_width=572
 window/size/viewport_height=672
+window/stretch/mode="viewport"
 
 [dotnet]
 

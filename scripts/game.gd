@@ -131,7 +131,6 @@ func _on_middle_press(x: int, y: int):
 			game_won()
 			
 func detonate(x: int, y: int):
-	var rune = runes[y][x]
 	for dy in range(-1, 2):
 		for dx in range(-1, 2):
 			if dx != 0 or dy != 0:
