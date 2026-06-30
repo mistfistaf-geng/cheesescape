@@ -16,13 +16,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v6p8y")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1307042386]
+[node name="MainMenuTab" type="ColorRect" parent="." unique_id=1307042386]
 layout_mode = 0
 offset_right = 576.0
 offset_bottom = 672.0
 color = Color(1, 0.84705883, 0, 1)
 
-[node name="NewGameButton" type="Button" parent="ColorRect" unique_id=305814625]
+[node name="NewGameButton" type="Button" parent="MainMenuTab" unique_id=305814625]
 layout_mode = 0
 offset_left = 223.0
 offset_top = 454.0
@@ -31,28 +31,28 @@ offset_bottom = 503.0
 theme = SubResource("Theme_v6p8y")
 text = "New Game"
 
-[node name="OptionsButton" type="Button" parent="ColorRect" unique_id=289627670]
+[node name="ExtraButton" type="Button" parent="MainMenuTab" unique_id=289627670]
 layout_mode = 0
 offset_left = 223.0
 offset_top = 503.0
 offset_right = 353.0
 offset_bottom = 552.0
-text = "Options"
+text = "Extras"
 
-[node name="ExtrasButton" type="Button" parent="ColorRect" unique_id=1305046758]
+[node name="ExitButton" type="Button" parent="MainMenuTab" unique_id=1305046758]
 layout_mode = 0
 offset_left = 223.0
 offset_top = 552.0
 offset_right = 353.0
 offset_bottom = 601.0
-text = "Extras"
+text = "Exit"
 
-[node name="Icon" type="Sprite2D" parent="ColorRect" unique_id=125306945]
+[node name="Icon" type="Sprite2D" parent="MainMenuTab" unique_id=125306945]
 position = Vector2(288.00003, 275)
 scale = Vector2(7, 7)
 texture = ExtResource("2_ak2if")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect" unique_id=1462124160]
+[node name="RichTextLabel" type="RichTextLabel" parent="MainMenuTab" unique_id=1462124160]
 layout_mode = 0
 offset_left = 177.0
 offset_top = 68.0
@@ -62,7 +62,8 @@ theme_override_colors/default_color = Color(1, 0.47058824, 0, 1)
 theme_override_font_sizes/normal_font_size = 33
 text = "CHEESESCAPE"
 
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=1449704699]
+[node name="NewGameTab" type="ColorRect" parent="." unique_id=1449704699]
+visible = false
 layout_mode = 0
 offset_left = 90.0
 offset_top = 413.0
@@ -70,7 +71,7 @@ offset_right = 486.0
 offset_bottom = 636.0
 color = Color(1, 0.26666668, 0, 1)
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect2" unique_id=948611764]
+[node name="DifficultyBox" type="ColorRect" parent="NewGameTab" unique_id=629804355]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 13.0
@@ -78,7 +79,7 @@ offset_right = 381.0
 offset_bottom = 211.0
 color = Color(1, 0.6156863, 0, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect2/ColorRect" unique_id=299276202]
+[node name="RichTextLabel" type="RichTextLabel" parent="NewGameTab/DifficultyBox" unique_id=1029983403]
 z_index = 1
 layout_mode = 0
 offset_left = -14.0
@@ -90,7 +91,7 @@ text = "Select your difficulty:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="ColorRect2/ColorRect" unique_id=643717240]
+[node name="EasyButton" type="Button" parent="NewGameTab/DifficultyBox" unique_id=949880088]
 layout_mode = 0
 offset_left = 104.0
 offset_top = 36.0
@@ -98,7 +99,7 @@ offset_right = 262.0
 offset_bottom = 74.0
 text = "Easy"
 
-[node name="Button2" type="Button" parent="ColorRect2/ColorRect" unique_id=586334426]
+[node name="MedButton" type="Button" parent="NewGameTab/DifficultyBox" unique_id=1631636512]
 layout_mode = 0
 offset_left = 104.0
 offset_top = 74.0
@@ -106,7 +107,7 @@ offset_right = 262.0
 offset_bottom = 112.0
 text = "Medium"
 
-[node name="Button3" type="Button" parent="ColorRect2/ColorRect" unique_id=672905251]
+[node name="HardButton" type="Button" parent="NewGameTab/DifficultyBox" unique_id=1319883560]
 layout_mode = 0
 offset_left = 104.0
 offset_top = 112.0
@@ -114,7 +115,7 @@ offset_right = 262.0
 offset_bottom = 150.0
 text = "Hard"
 
-[node name="Button4" type="Button" parent="ColorRect2/ColorRect" unique_id=952330153]
+[node name="CustomButton" type="Button" parent="NewGameTab/DifficultyBox" unique_id=1138640197]
 layout_mode = 0
 offset_left = 104.0
 offset_top = 150.0
@@ -122,78 +123,80 @@ offset_right = 262.0
 offset_bottom = 188.0
 text = "Custom"
 
-[node name="ColorRect2" type="ColorRect" parent="ColorRect2" unique_id=629804355]
-layout_mode = 0
-offset_left = 15.0
-offset_top = 13.0
-offset_right = 381.0
-offset_bottom = 211.0
-color = Color(1, 0.6156863, 0, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect2/ColorRect2" unique_id=1029983403]
-z_index = 1
-layout_mode = 0
-offset_left = -14.0
-offset_top = -4.0
-offset_right = 380.0
-offset_bottom = 36.0
-theme_override_colors/default_color = Color(1, 0.80784315, 0, 1)
-text = "Select your difficulty:"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Button" type="Button" parent="ColorRect2/ColorRect2" unique_id=949880088]
-layout_mode = 0
-offset_left = 104.0
-offset_top = 36.0
-offset_right = 262.0
-offset_bottom = 74.0
-text = "Easy"
-
-[node name="Button2" type="Button" parent="ColorRect2/ColorRect2" unique_id=1631636512]
-layout_mode = 0
-offset_left = 104.0
-offset_top = 74.0
-offset_right = 262.0
-offset_bottom = 112.0
-text = "Medium"
-
-[node name="Button3" type="Button" parent="ColorRect2/ColorRect2" unique_id=1319883560]
-layout_mode = 0
-offset_left = 104.0
-offset_top = 112.0
-offset_right = 262.0
-offset_bottom = 150.0
-text = "Hard"
-
-[node name="Button4" type="Button" parent="ColorRect2/ColorRect2" unique_id=1138640197]
-layout_mode = 0
-offset_left = 104.0
-offset_top = 150.0
-offset_right = 262.0
-offset_bottom = 188.0
-text = "Custom"
-
-[node name="Lock" type="Sprite2D" parent="ColorRect2/ColorRect2" unique_id=915445590]
+[node name="EasyLock" type="Sprite2D" parent="NewGameTab/DifficultyBox" unique_id=915445590]
 position = Vector2(89.00001, 131.00003)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_ig5kc")
 
-[node name="Lock2" type="Sprite2D" parent="ColorRect2/ColorRect2" unique_id=354442119]
+[node name="MedLock" type="Sprite2D" parent="NewGameTab/DifficultyBox" unique_id=354442119]
 position = Vector2(89, 93)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_ig5kc")
 
-[node name="Lock3" type="Sprite2D" parent="ColorRect2/ColorRect2" unique_id=470889895]
+[node name="HardLock" type="Sprite2D" parent="NewGameTab/DifficultyBox" unique_id=470889895]
 position = Vector2(89.00001, 169.00003)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_ig5kc")
 
-[node name="Unlock" type="Sprite2D" parent="ColorRect2/ColorRect2" unique_id=1767941407]
+[node name="CustomLock" type="Sprite2D" parent="NewGameTab/DifficultyBox" unique_id=1767941407]
 position = Vector2(89, 55)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_05l2w")
 
-[connection signal="pressed" from="ColorRect/NewGameButton" to="." method="_on_new_game_button_pressed"]
-[connection signal="pressed" from="ColorRect/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="ColorRect/ExtrasButton" to="." method="_on_extras_pressed"]
+[node name="VSlider" type="VSlider" parent="NewGameTab/DifficultyBox" unique_id=1095141576]
+visible = false
+layout_mode = 0
+offset_left = 307.0
+offset_top = 35.0
+offset_right = 395.0
+offset_bottom = 188.0
+min_value = 40.0
+max_value = 200.0
+value = 40.0
+
+[node name="Label" type="Label" parent="NewGameTab/DifficultyBox/VSlider" unique_id=356194406]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -14.0
+offset_right = 48.0
+offset_bottom = 9.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+text = "200-"
+
+[node name="Label2" type="Label" parent="NewGameTab/DifficultyBox/VSlider" unique_id=212372998]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 139.0
+offset_right = 56.0
+offset_bottom = 162.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+text = "40-"
+
+[node name="Label3" type="Label" parent="NewGameTab/DifficultyBox/VSlider" unique_id=1940420181]
+layout_mode = 0
+offset_left = -44.0
+offset_top = 43.0
+offset_right = 36.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Mine Count:"
+autowrap_mode = 2
+
+[node name="NumMinesLabel" type="Label" parent="NewGameTab/DifficultyBox/VSlider" unique_id=373298263]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 69.0
+offset_right = 49.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+text = "40"
+
+[connection signal="pressed" from="MainMenuTab/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="MainMenuTab/ExtraButton" to="." method="_on_extra_button_pressed"]
+[connection signal="pressed" from="MainMenuTab/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="NewGameTab/DifficultyBox/EasyButton" to="." method="_on_easy_button_pressed"]
+[connection signal="pressed" from="NewGameTab/DifficultyBox/MedButton" to="." method="_on_med_button_pressed"]
+[connection signal="pressed" from="NewGameTab/DifficultyBox/HardButton" to="." method="_on_hard_button_pressed"]
+[connection signal="pressed" from="NewGameTab/DifficultyBox/CustomButton" to="." method="_on_custom_button_pressed"]
+[connection signal="value_changed" from="NewGameTab/DifficultyBox/VSlider" to="." method="_on_v_slider_value_changed"]

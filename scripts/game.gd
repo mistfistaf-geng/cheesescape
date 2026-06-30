@@ -4,8 +4,8 @@ extends Node2D
 const RUNE_SCENE = preload("res://rune.tscn")
 @export var rows: int = 18 # Number of rows
 @export var cols: int = 18 # Number of columns
-@export var num_mines: int = 40
-@export var num_flags: int = 0
+
+var num_flags: int = 0
 @export var current_score: int = 0
 var runes = [] #2D array to store rune instances
 var first_click_complete = false
@@ -18,7 +18,7 @@ func _ready():
 	clock = get_node("ColorRect/Clock")
 	mines = get_node("ColorRect/Mines/CurrentMines")
 	score = get_node("ColorRect/Score/CurrentScore")
-	mines.text = str(num_mines)
+	mines.text = str(Global.num_mines)
 	score.text = str(current_score)
 	
 func create_grid():
@@ -31,6 +31,7 @@ func create_grid():
 			rune.rune_pressed.connect(_on_rune_pressed.bind(x,y))
 			rune.middle_press.connect(_on_middle_press.bind(x,y))
 			rune.flag_place.connect(_on_flag_place.bind(x,y))
+			rune.flag_neighbors.connect(_on_flag_nieghbors.bind(x,y))
 			runes[y].append(rune)
 			$Grid.add_child(rune)
 	calculate_adjacent_mines()
@@ -43,7 +44,7 @@ func generate_mine_positions(first_click_position:Vector2i) -> Array:
 			
 	randomize()
 	var mine_positions = []
-	while mine_positions.size() < num_mines:
+	while mine_positions.size() < Global.num_mines:
 		var pos = Vector2i(randi() % cols, randi() % rows)
 		if pos not in mine_positions and pos not in first_click_positions:
 			mine_positions.append(pos)
@@ -120,8 +121,7 @@ func _on_middle_press(x: int, y: int):
 					if neighbor.is_flagged and neighbor.is_mine:
 						correct_count += 1
 					if not neighbor.is_flagged and neighbor.is_mine:
-						neighbor.fail()
-						game_over()
+						return
 	if mine_count == correct_count:
 		reveal_neighbors_middle_press(x,y)
 		if check_win_condition():
@@ -135,7 +135,6 @@ func reveal_neighbors_middle_press(x: int, y: int):
 		return	
 	rune.reveal_rune()
 	
-	
 	for dy in range(-1, 2):
 		for dx in range(-1, 2):
 			if dx != 0 or dy != 0:
@@ -147,8 +146,31 @@ func _on_flag_place(x: int, y: int):
 		num_flags += 1
 	else:
 		num_flags -= 1
-	mines.text = str(num_mines - num_flags)
-
+	mines.text = str(Global.num_mines - num_flags)
+	
+func _on_flag_nieghbors(x: int, y: int):
+	if x < 0 or y < 0 or x >= cols or y >= rows:
+		return
+	var rune = runes[y][x]
+	var stack: Array[TextureButton]
+	var unrevealed_count = 0
+	for dy in range(-1, 2):
+		for dx in range(-1, 2):
+			if dx != 0 or dy != 0:
+				if (x + dx) >= 0 and (y + dy) >= 0 and (x + dx) < cols and (y + dy) < rows:
+					var neighbor = runes[y + dy][x + dx]
+					if not neighbor.is_revealed:
+						stack.append(neighbor)
+						unrevealed_count += 1
+						
+	if unrevealed_count == rune.adjacent_mines:
+		for i in range(0, unrevealed_count):
+			var neighbor = stack[i]
+			if not neighbor.is_flagged:
+				num_flags += 1
+				neighbor.toggle_flagging()
+	mines.text = str(Global.num_mines - num_flags)
+	
 # Reveal all mines and end game
 func game_over():
 	for row in runes:
@@ -157,7 +179,7 @@ func game_over():
 			if rune.is_mine and not rune.is_revealed:
 				rune.reveal_rune()
 	$ColorRect/Title.text = "Game Over!"
-	$ColorRect/Title.visible = true;
+	$ColorRect/Title.visible = true
 	stop_timer()
 
 func check_win_condition():
@@ -173,24 +195,20 @@ func game_won():
 		for rune in row:
 			rune.disabled = true
 	$ColorRect/Title.text = "You Won!"
-	$ColorRect/Title.visible = true;
-	stop_timer()
-	
-func restart():
-	first_click_complete = false
-	for child in $Grid.get_children():
-		child.queue_free()
-	runes.clear()
-	current_score = 0
-	score.text = str(current_score)
-	restart_timer()
-	$ColorRect/Title.text = "Trap all the Dormies!"
 	$ColorRect/Title.visible = true
-	
-	create_grid()
+	if Global.num_mines == 40 and Global.num_wins == 0:
+		Global.num_wins = 1
+	elif Global.num_mines == 60 and Global.num_wins == 1:
+		Global.num_wins = 2
+	elif Global.num_mines == 80 and Global.num_wins == 2:
+		Global.num_wins = 3		
+	stop_timer()
 	
 func _on_restart_button_pressed() -> void:
 	restart()
+	
+func restart():
+	get_tree().change_scene_to_file("res://main.tscn")
 
 var timer_running: bool = false
 var current_time: float = 0.0
@@ -228,6 +246,7 @@ func _on_main_menu_button_pressed() -> void:
 	for child in $Grid.get_children():
 		child.queue_free()
 	runes.clear()
+	mines.text = "?"
 	current_score = 0
 	score.text = str(current_score)
 	restart_timer()

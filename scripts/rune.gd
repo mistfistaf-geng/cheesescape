@@ -9,6 +9,7 @@ var is_flagged: bool = false
 signal rune_pressed
 signal middle_press
 signal flag_place
+signal flag_neighbors
 func _on_gui_input(event: InputEvent) -> void:
 	if not disabled:
 		if event is InputEventMouseButton and event.is_pressed():
@@ -20,6 +21,8 @@ func _on_gui_input(event: InputEvent) -> void:
 					if !is_revealed:
 						toggle_flagging()
 						emit_signal("flag_place")
+					else:
+						emit_signal("flag_neighbors")
 				MOUSE_BUTTON_MIDDLE:
 					if is_revealed:
 						emit_signal("middle_press")
