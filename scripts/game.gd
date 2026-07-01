@@ -254,7 +254,7 @@ func convert_time_to_string(time: float) -> String:
 	var miliseconds: int = int(time * 1000.0) % 1000
 	var string: String = "%02d.%03d" % [seconds, miliseconds]
 	if minutes > 0 or hours > 0:
-		string = string.insert(0, ("02d:" if hours > 0 else "%d:") % minutes)
+		string = string.insert(0, ("%02d:" if hours > 0 else "%d:") % minutes)
 	if hours > 0:
 		string = string.insert(0, "%d:" % hours)
 	return string
