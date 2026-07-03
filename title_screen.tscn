@@ -4,6 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://b0g4q702xtdxx" path="res://assets/icon.png" id="2_ak2if"]
 [ext_resource type="Texture2D" uid="uid://cmfrtmr0c7pew" path="res://assets/lock.png" id="3_ig5kc"]
 [ext_resource type="Texture2D" uid="uid://xj2j78kgpyp5" path="res://assets/unlock.png" id="4_05l2w"]
+[ext_resource type="Texture2D" uid="uid://d247fagjdbg0d" path="res://assets/Tutorial/FreshStart.png" id="5_tpml5"]
+[ext_resource type="Texture2D" uid="uid://cjun867n7xcwh" path="res://assets/Tutorial/RightClick.png" id="6_jqemp"]
+[ext_resource type="Texture2D" uid="uid://chcmj2f8qoxh" path="res://assets/Tutorial/MiddleClick.png" id="7_013yr"]
+[ext_resource type="Texture2D" uid="uid://b3mdpwyjmk1mb" path="res://assets/Tutorial/RightClock2.png" id="8_8vmu4"]
+[ext_resource type="Texture2D" uid="uid://tw4d8i64gno2" path="res://assets/Tutorial/Lose.png" id="9_xfn3p"]
+[ext_resource type="Texture2D" uid="uid://coooi7a3saa2h" path="res://assets/Tutorial/Win.png" id="10_rhgbh"]
 
 [sub_resource type="Theme" id="Theme_v6p8y"]
 
@@ -31,21 +37,21 @@ offset_bottom = 503.0
 theme = SubResource("Theme_v6p8y")
 text = "New Game"
 
-[node name="ExtraButton" type="Button" parent="MainMenuTab" unique_id=289627670]
+[node name="HowToPlayButton" type="Button" parent="MainMenuTab" unique_id=289627670]
 layout_mode = 0
 offset_left = 223.0
 offset_top = 503.0
 offset_right = 353.0
 offset_bottom = 552.0
-text = "Extras"
+text = "How To Play"
 
-[node name="ExitButton" type="Button" parent="MainMenuTab" unique_id=1305046758]
+[node name="ExtraButton" type="Button" parent="MainMenuTab" unique_id=1305046758]
 layout_mode = 0
 offset_left = 223.0
 offset_top = 552.0
 offset_right = 353.0
 offset_bottom = 601.0
-text = "Exit"
+text = "Extras"
 
 [node name="Icon" type="Sprite2D" parent="MainMenuTab" unique_id=125306945]
 position = Vector2(288.00003, 275)
@@ -192,11 +198,286 @@ offset_bottom = 92.0
 theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
 text = "40"
 
+[node name="CloseButton" type="Button" parent="NewGameTab/DifficultyBox" unique_id=1455819979]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 3.0
+offset_right = 363.0
+offset_bottom = 35.0
+text = "X"
+
+[node name="HowToPlayTab" type="ColorRect" parent="." unique_id=1280158168]
+visible = false
+layout_mode = 0
+offset_left = 90.0
+offset_top = 413.0
+offset_right = 486.0
+offset_bottom = 636.0
+color = Color(1, 0.26666668, 0, 1)
+
+[node name="DifficultyBox" type="ColorRect" parent="HowToPlayTab" unique_id=1322501238]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 381.0
+offset_bottom = 211.0
+color = Color(1, 0.6156863, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HowToPlayTab/DifficultyBox" unique_id=2050937883]
+z_index = 1
+layout_mode = 0
+offset_right = 196.0
+offset_bottom = 86.0
+theme_override_colors/default_color = Color(1, 0.80784315, 0, 1)
+text = "How to play Cheescape:
+Left Click to Reveal Tile
+Right Click to Place Trap"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="HowToPlayTab/DifficultyBox" unique_id=511491550]
+z_index = 1
+layout_mode = 0
+offset_left = 230.0
+offset_top = 4.0
+offset_right = 326.0
+offset_bottom = 58.0
+theme_override_colors/default_color = Color(1, 0.80784315, 0, 1)
+theme_override_font_sizes/normal_font_size = 12
+text = "Fun Fact: 
+You can't lose on the first click!"
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="HowToPlayTab/DifficultyBox" unique_id=756945147]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 3.0
+offset_right = 363.0
+offset_bottom = 35.0
+text = "X"
+
+[node name="NextPageButton" type="Button" parent="HowToPlayTab/DifficultyBox" unique_id=1473758769]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 90.0
+offset_right = 365.0
+offset_bottom = 115.0
+theme_override_font_sizes/font_size = 12
+text = ">"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="HowToPlayTab/DifficultyBox" unique_id=1934770153]
+z_index = 1
+layout_mode = 0
+offset_left = 154.0
+offset_top = 82.0
+offset_right = 227.0
+offset_bottom = 196.0
+theme_override_colors/default_color = Color(1, 0.80784315, 0, 1)
+theme_override_font_sizes/normal_font_size = 12
+text = "Numbers
+show how
+many dormies
+are lurking 
+nearby!"
+vertical_alignment = 1
+
+[node name="FreshStart" type="Sprite2D" parent="HowToPlayTab" unique_id=1877440733]
+position = Vector2(95, 154)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_tpml5")
+
+[node name="RightClick" type="Sprite2D" parent="HowToPlayTab" unique_id=1977376804]
+position = Vector2(298, 139)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("6_jqemp")
+
+[node name="HowToPlayTab2" type="ColorRect" parent="." unique_id=1318094298]
+visible = false
+layout_mode = 0
+offset_left = 90.0
+offset_top = 413.0
+offset_right = 486.0
+offset_bottom = 636.0
+color = Color(1, 0.26666668, 0, 1)
+
+[node name="DifficultyBox" type="ColorRect" parent="HowToPlayTab2" unique_id=128415284]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 381.0
+offset_bottom = 211.0
+color = Color(1, 0.6156863, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HowToPlayTab2/DifficultyBox" unique_id=1187521377]
+z_index = 1
+layout_mode = 0
+offset_left = 4.0
+offset_top = -6.0
+offset_right = 220.0
+offset_bottom = 87.0
+theme_override_colors/default_color = Color(1, 0.80784315, 0, 1)
+theme_override_font_sizes/normal_font_size = 14
+text = "Middle Click Safe Numbers to Reveal Neighboring Tiles
+Right Click a Number to Place Traps on Guarenteed Dormies!"
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="HowToPlayTab2/DifficultyBox" unique_id=1465199147]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 3.0
+offset_right = 363.0
+offset_bottom = 35.0
+text = "X"
+
+[node name="NextPageButton2" type="Button" parent="HowToPlayTab2/DifficultyBox" unique_id=1551668213]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 90.0
+offset_right = 365.0
+offset_bottom = 115.0
+theme_override_font_sizes/font_size = 12
+text = ">"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="HowToPlayTab2/DifficultyBox" unique_id=1473113362]
+z_index = 1
+layout_mode = 0
+offset_left = 132.0
+offset_top = 80.0
+offset_right = 233.0
+offset_bottom = 194.0
+theme_override_colors/default_color = Color(1, 0.80784315, 0, 1)
+theme_override_font_sizes/normal_font_size = 12
+text = "Middle click can
+only be done when the number is
+safe from hungry dormies!"
+vertical_alignment = 1
+
+[node name="PrevPageButton" type="Button" parent="HowToPlayTab2/DifficultyBox" unique_id=1433367632]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 90.0
+offset_right = 16.0
+offset_bottom = 115.0
+theme_override_font_sizes/font_size = 12
+text = "<"
+
+[node name="MiddleClick" type="Sprite2D" parent="HowToPlayTab2/DifficultyBox" unique_id=950166932]
+position = Vector2(72, 138)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_013yr")
+
+[node name="RightClock2" type="Sprite2D" parent="HowToPlayTab2/DifficultyBox" unique_id=434399699]
+position = Vector2(289, 147)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("8_8vmu4")
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="HowToPlayTab2/DifficultyBox" unique_id=1823416550]
+z_index = 1
+layout_mode = 0
+offset_left = 231.0
+offset_top = -6.0
+offset_right = 332.0
+offset_bottom = 108.0
+theme_override_colors/default_color = Color(1, 0.80784315, 0, 1)
+theme_override_font_sizes/normal_font_size = 12
+text = "Be warned...
+A number can feel safe and get eaten if a trap was misplaced! "
+vertical_alignment = 1
+
+[node name="HowToPlayTab3" type="ColorRect" parent="." unique_id=1332433466]
+visible = false
+layout_mode = 0
+offset_left = 90.0
+offset_top = 413.0
+offset_right = 486.0
+offset_bottom = 636.0
+color = Color(1, 0.26666668, 0, 1)
+
+[node name="DifficultyBox" type="ColorRect" parent="HowToPlayTab3" unique_id=1312752837]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 381.0
+offset_bottom = 211.0
+color = Color(1, 0.6156863, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HowToPlayTab3/DifficultyBox" unique_id=1576403454]
+z_index = 1
+layout_mode = 0
+offset_left = 5.0
+offset_top = -12.0
+offset_right = 272.0
+offset_bottom = 81.0
+theme_override_colors/default_color = Color(1, 0.80784315, 0, 1)
+theme_override_font_sizes/normal_font_size = 14
+text = "If a Dormie is Revealed it's GAME OVER
+Dormies Will Explode if Disturbed and Will Eat All Your Cheese Numbers"
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="HowToPlayTab3/DifficultyBox" unique_id=1899920766]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 3.0
+offset_right = 363.0
+offset_bottom = 35.0
+text = "X"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="HowToPlayTab3/DifficultyBox" unique_id=844163302]
+z_index = 1
+layout_mode = 0
+offset_left = 135.0
+offset_top = 72.0
+offset_right = 236.0
+offset_bottom = 186.0
+theme_override_colors/default_color = Color(1, 0.80784315, 0, 1)
+theme_override_font_sizes/normal_font_size = 12
+text = "Score is determind by the quality of your cheese, and Dormies are after the best!"
+vertical_alignment = 1
+
+[node name="PrevPageButton2" type="Button" parent="HowToPlayTab3/DifficultyBox" unique_id=779170814]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 90.0
+offset_right = 16.0
+offset_bottom = 115.0
+theme_override_font_sizes/font_size = 12
+text = "<"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="HowToPlayTab3/DifficultyBox" unique_id=1761746328]
+z_index = 1
+layout_mode = 0
+offset_left = 265.0
+offset_top = 34.0
+offset_right = 377.0
+offset_bottom = 68.0
+theme_override_colors/default_color = Color(1, 0.80784315, 0, 1)
+theme_override_font_sizes/normal_font_size = 12
+text = "Reveal all cheese numbers to win!"
+vertical_alignment = 1
+
+[node name="Lose" type="Sprite2D" parent="HowToPlayTab3" unique_id=1824677043]
+position = Vector2(88, 144)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_xfn3p")
+
+[node name="Win" type="Sprite2D" parent="HowToPlayTab3" unique_id=2032303825]
+position = Vector2(317, 142)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("10_rhgbh")
+
 [connection signal="pressed" from="MainMenuTab/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="MainMenuTab/HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
 [connection signal="pressed" from="MainMenuTab/ExtraButton" to="." method="_on_extra_button_pressed"]
-[connection signal="pressed" from="MainMenuTab/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="NewGameTab/DifficultyBox/EasyButton" to="." method="_on_easy_button_pressed"]
 [connection signal="pressed" from="NewGameTab/DifficultyBox/MedButton" to="." method="_on_med_button_pressed"]
 [connection signal="pressed" from="NewGameTab/DifficultyBox/HardButton" to="." method="_on_hard_button_pressed"]
 [connection signal="pressed" from="NewGameTab/DifficultyBox/CustomButton" to="." method="_on_custom_button_pressed"]
 [connection signal="value_changed" from="NewGameTab/DifficultyBox/VSlider" to="." method="_on_v_slider_value_changed"]
+[connection signal="pressed" from="NewGameTab/DifficultyBox/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="HowToPlayTab/DifficultyBox/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="HowToPlayTab/DifficultyBox/NextPageButton" to="." method="_on_next_page_button_pressed"]
+[connection signal="pressed" from="HowToPlayTab2/DifficultyBox/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="HowToPlayTab2/DifficultyBox/NextPageButton2" to="." method="_on_next_page_button_2_pressed"]
+[connection signal="pressed" from="HowToPlayTab2/DifficultyBox/PrevPageButton" to="." method="_on_prev_page_button_pressed"]
+[connection signal="pressed" from="HowToPlayTab3/DifficultyBox/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="HowToPlayTab3/DifficultyBox/PrevPageButton2" to="." method="_on_prev_page_button_2_pressed"]

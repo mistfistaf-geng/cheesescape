@@ -5,8 +5,9 @@ const MAIN_SCENE = preload("res://main.tscn")
 func _on_new_game_button_pressed() -> void:
 	$NewGameTab.visible = true
 	$MainMenuTab/NewGameButton.disabled = true
+	$MainMenuTab/HowToPlayButton.disabled = true
 	$MainMenuTab/ExtraButton.disabled = true
-	$MainMenuTab/ExitButton.disabled = true
+	
 	$NewGameTab/DifficultyBox/MedButton.disabled = true
 	$NewGameTab/DifficultyBox/HardButton.disabled = true
 	$NewGameTab/DifficultyBox/CustomButton.disabled = true
@@ -28,10 +29,6 @@ func _on_new_game_button_pressed() -> void:
 		$NewGameTab/DifficultyBox/CustomButton.disabled = false
 		$NewGameTab/DifficultyBox/CustomLock.texture = texture
 	pass
-
-
-func _on_extra_button_pressed() -> void:
-	pass # Replace with function body.
 
 
 func _on_exit_button_pressed() -> void:
@@ -63,3 +60,37 @@ func _on_custom_button_pressed() -> void:
 
 func _on_v_slider_value_changed(value: float) -> void:
 	$NewGameTab/DifficultyBox/VSlider/NumMinesLabel.text = str(int(value))
+
+
+func _on_close_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://title_screen.tscn")
+
+
+func _on_how_to_play_button_pressed() -> void:
+	$HowToPlayTab.visible = true
+	$MainMenuTab/NewGameButton.disabled = true
+	$MainMenuTab/HowToPlayButton.disabled = true
+	$MainMenuTab/ExtraButton.disabled = true
+	
+func _on_extra_button_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_next_page_button_pressed() -> void:
+	$HowToPlayTab.visible = false
+	$HowToPlayTab2.visible = true
+
+
+func _on_next_page_button_2_pressed() -> void:
+	$HowToPlayTab2.visible = false
+	$HowToPlayTab3.visible = true
+
+
+func _on_prev_page_button_pressed() -> void:
+	$HowToPlayTab2.visible = false
+	$HowToPlayTab.visible = true
+
+
+func _on_prev_page_button_2_pressed() -> void:
+	$HowToPlayTab3.visible = false
+	$HowToPlayTab2.visible = true
