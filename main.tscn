@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://hw2ps5xl01xx"]
 
 [ext_resource type="Script" uid="uid://cmn1prqjgk42d" path="res://scripts/game.gd" id="1_ig7tw"]
+[ext_resource type="AudioStream" uid="uid://iloeg8xn1l5k" path="res://assets/dormies/KBarn.mp3" id="2_272bh"]
+[ext_resource type="AudioStream" uid="uid://dk8uqj6jrq1g8" path="res://assets/dormies/Lam.mp3" id="3_5vw27"]
+[ext_resource type="AudioStream" uid="uid://dbheuxq0140iy" path="res://assets/dormies/mistfist.mp3" id="4_kek77"]
+[ext_resource type="AudioStream" uid="uid://bh3e1okitqcec" path="res://assets/dormies/plarty.mp3" id="5_4c57u"]
+[ext_resource type="AudioStream" uid="uid://csl2rvjlivp20" path="res://assets/dormies/PrivateShorty.mp3" id="6_efxa6"]
+[ext_resource type="AudioStream" uid="uid://nyg3rf57ffex" path="res://assets/dormies/Samby.mp3" id="7_dg77c"]
 
 [node name="Main" type="Node2D" unique_id=17708068]
 
@@ -87,6 +93,24 @@ offset_right = 288.0
 offset_bottom = 672.0
 theme_override_font_sizes/font_size = 16
 text = "Main Menu"
+
+[node name="KBarn" type="AudioStreamPlayer" parent="Game" unique_id=68721974]
+stream = ExtResource("2_272bh")
+
+[node name="Lam" type="AudioStreamPlayer" parent="Game" unique_id=1248714308]
+stream = ExtResource("3_5vw27")
+
+[node name="mistfist" type="AudioStreamPlayer" parent="Game" unique_id=371005201]
+stream = ExtResource("4_kek77")
+
+[node name="plarty" type="AudioStreamPlayer" parent="Game" unique_id=2108394813]
+stream = ExtResource("5_4c57u")
+
+[node name="PrivateShorty" type="AudioStreamPlayer" parent="Game" unique_id=1430496190]
+stream = ExtResource("6_efxa6")
+
+[node name="Samby" type="AudioStreamPlayer" parent="Game" unique_id=611178466]
+stream = ExtResource("7_dg77c")
 
 [connection signal="pressed" from="Game/RestartButton" to="Game" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Game/MainMenuButton" to="Game" method="_on_main_menu_button_pressed"]

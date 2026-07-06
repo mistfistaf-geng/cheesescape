@@ -10,6 +10,14 @@
 [ext_resource type="Texture2D" uid="uid://b3mdpwyjmk1mb" path="res://assets/Tutorial/RightClock2.png" id="8_8vmu4"]
 [ext_resource type="Texture2D" uid="uid://tw4d8i64gno2" path="res://assets/Tutorial/Lose.png" id="9_xfn3p"]
 [ext_resource type="Texture2D" uid="uid://coooi7a3saa2h" path="res://assets/Tutorial/Win.png" id="10_rhgbh"]
+[ext_resource type="Texture2D" uid="uid://dkbuoik87ulfh" path="res://assets/mimiqrcode.png" id="11_rhgbh"]
+[ext_resource type="AudioStream" uid="uid://iloeg8xn1l5k" path="res://assets/dormies/KBarn.mp3" id="12_kvwfe"]
+[ext_resource type="AudioStream" uid="uid://dk8uqj6jrq1g8" path="res://assets/dormies/Lam.mp3" id="13_l4tom"]
+[ext_resource type="AudioStream" uid="uid://dbheuxq0140iy" path="res://assets/dormies/mistfist.mp3" id="14_y8ura"]
+[ext_resource type="AudioStream" uid="uid://bh3e1okitqcec" path="res://assets/dormies/plarty.mp3" id="15_aav61"]
+[ext_resource type="AudioStream" uid="uid://csl2rvjlivp20" path="res://assets/dormies/PrivateShorty.mp3" id="16_a64np"]
+[ext_resource type="AudioStream" uid="uid://nyg3rf57ffex" path="res://assets/dormies/Samby.mp3" id="17_g2tdu"]
+[ext_resource type="Texture2D" uid="uid://yiluq4c08cxn" path="res://assets/inkartwip.png" id="18_l4tom"]
 
 [sub_resource type="Theme" id="Theme_v6p8y"]
 
@@ -215,7 +223,7 @@ offset_right = 486.0
 offset_bottom = 636.0
 color = Color(1, 0.26666668, 0, 1)
 
-[node name="DifficultyBox" type="ColorRect" parent="HowToPlayTab" unique_id=1322501238]
+[node name="InnerColor" type="ColorRect" parent="HowToPlayTab" unique_id=1322501238]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 13.0
@@ -223,7 +231,7 @@ offset_right = 381.0
 offset_bottom = 211.0
 color = Color(1, 0.6156863, 0, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HowToPlayTab/DifficultyBox" unique_id=2050937883]
+[node name="RichTextLabel" type="RichTextLabel" parent="HowToPlayTab/InnerColor" unique_id=2050937883]
 z_index = 1
 layout_mode = 0
 offset_right = 196.0
@@ -235,7 +243,7 @@ Right Click to Place Trap"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="HowToPlayTab/DifficultyBox" unique_id=511491550]
+[node name="RichTextLabel2" type="RichTextLabel" parent="HowToPlayTab/InnerColor" unique_id=511491550]
 z_index = 1
 layout_mode = 0
 offset_left = 230.0
@@ -248,7 +256,7 @@ text = "Fun Fact:
 You can't lose on the first click!"
 vertical_alignment = 1
 
-[node name="CloseButton" type="Button" parent="HowToPlayTab/DifficultyBox" unique_id=756945147]
+[node name="CloseButton" type="Button" parent="HowToPlayTab/InnerColor" unique_id=756945147]
 layout_mode = 0
 offset_left = 331.0
 offset_top = 3.0
@@ -256,7 +264,7 @@ offset_right = 363.0
 offset_bottom = 35.0
 text = "X"
 
-[node name="NextPageButton" type="Button" parent="HowToPlayTab/DifficultyBox" unique_id=1473758769]
+[node name="NextPageButton" type="Button" parent="HowToPlayTab/InnerColor" unique_id=1473758769]
 layout_mode = 0
 offset_left = 350.0
 offset_top = 90.0
@@ -265,7 +273,7 @@ offset_bottom = 115.0
 theme_override_font_sizes/font_size = 12
 text = ">"
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="HowToPlayTab/DifficultyBox" unique_id=1934770153]
+[node name="RichTextLabel3" type="RichTextLabel" parent="HowToPlayTab/InnerColor" unique_id=1934770153]
 z_index = 1
 layout_mode = 0
 offset_left = 154.0
@@ -300,7 +308,7 @@ offset_right = 486.0
 offset_bottom = 636.0
 color = Color(1, 0.26666668, 0, 1)
 
-[node name="DifficultyBox" type="ColorRect" parent="HowToPlayTab2" unique_id=128415284]
+[node name="InnerColor" type="ColorRect" parent="HowToPlayTab2" unique_id=128415284]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 13.0
@@ -308,7 +316,7 @@ offset_right = 381.0
 offset_bottom = 211.0
 color = Color(1, 0.6156863, 0, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HowToPlayTab2/DifficultyBox" unique_id=1187521377]
+[node name="RichTextLabel" type="RichTextLabel" parent="HowToPlayTab2/InnerColor" unique_id=1187521377]
 z_index = 1
 layout_mode = 0
 offset_left = 4.0
@@ -321,7 +329,7 @@ text = "Middle Click Safe Numbers to Reveal Neighboring Tiles
 Right Click a Number to Place Traps on Guarenteed Dormies!"
 vertical_alignment = 1
 
-[node name="CloseButton" type="Button" parent="HowToPlayTab2/DifficultyBox" unique_id=1465199147]
+[node name="CloseButton" type="Button" parent="HowToPlayTab2/InnerColor" unique_id=1465199147]
 layout_mode = 0
 offset_left = 331.0
 offset_top = 3.0
@@ -329,7 +337,7 @@ offset_right = 363.0
 offset_bottom = 35.0
 text = "X"
 
-[node name="NextPageButton2" type="Button" parent="HowToPlayTab2/DifficultyBox" unique_id=1551668213]
+[node name="NextPageButton2" type="Button" parent="HowToPlayTab2/InnerColor" unique_id=1551668213]
 layout_mode = 0
 offset_left = 350.0
 offset_top = 90.0
@@ -338,7 +346,7 @@ offset_bottom = 115.0
 theme_override_font_sizes/font_size = 12
 text = ">"
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="HowToPlayTab2/DifficultyBox" unique_id=1473113362]
+[node name="RichTextLabel3" type="RichTextLabel" parent="HowToPlayTab2/InnerColor" unique_id=1473113362]
 z_index = 1
 layout_mode = 0
 offset_left = 132.0
@@ -352,7 +360,7 @@ only be done when the number is
 safe from hungry dormies!"
 vertical_alignment = 1
 
-[node name="PrevPageButton" type="Button" parent="HowToPlayTab2/DifficultyBox" unique_id=1433367632]
+[node name="PrevPageButton" type="Button" parent="HowToPlayTab2/InnerColor" unique_id=1433367632]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 90.0
@@ -361,17 +369,17 @@ offset_bottom = 115.0
 theme_override_font_sizes/font_size = 12
 text = "<"
 
-[node name="MiddleClick" type="Sprite2D" parent="HowToPlayTab2/DifficultyBox" unique_id=950166932]
+[node name="MiddleClick" type="Sprite2D" parent="HowToPlayTab2/InnerColor" unique_id=950166932]
 position = Vector2(72, 138)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("7_013yr")
 
-[node name="RightClock2" type="Sprite2D" parent="HowToPlayTab2/DifficultyBox" unique_id=434399699]
+[node name="RightClock2" type="Sprite2D" parent="HowToPlayTab2/InnerColor" unique_id=434399699]
 position = Vector2(289, 147)
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("8_8vmu4")
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="HowToPlayTab2/DifficultyBox" unique_id=1823416550]
+[node name="RichTextLabel4" type="RichTextLabel" parent="HowToPlayTab2/InnerColor" unique_id=1823416550]
 z_index = 1
 layout_mode = 0
 offset_left = 231.0
@@ -393,7 +401,7 @@ offset_right = 486.0
 offset_bottom = 636.0
 color = Color(1, 0.26666668, 0, 1)
 
-[node name="DifficultyBox" type="ColorRect" parent="HowToPlayTab3" unique_id=1312752837]
+[node name="InnerColor" type="ColorRect" parent="HowToPlayTab3" unique_id=1312752837]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 13.0
@@ -401,7 +409,7 @@ offset_right = 381.0
 offset_bottom = 211.0
 color = Color(1, 0.6156863, 0, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HowToPlayTab3/DifficultyBox" unique_id=1576403454]
+[node name="RichTextLabel" type="RichTextLabel" parent="HowToPlayTab3/InnerColor" unique_id=1576403454]
 z_index = 1
 layout_mode = 0
 offset_left = 5.0
@@ -414,7 +422,7 @@ text = "If a Dormie is Revealed it's GAME OVER
 Dormies Will Explode if Disturbed and Will Eat All Your Cheese Numbers"
 vertical_alignment = 1
 
-[node name="CloseButton" type="Button" parent="HowToPlayTab3/DifficultyBox" unique_id=1899920766]
+[node name="CloseButton" type="Button" parent="HowToPlayTab3/InnerColor" unique_id=1899920766]
 layout_mode = 0
 offset_left = 331.0
 offset_top = 3.0
@@ -422,7 +430,7 @@ offset_right = 363.0
 offset_bottom = 35.0
 text = "X"
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="HowToPlayTab3/DifficultyBox" unique_id=844163302]
+[node name="RichTextLabel3" type="RichTextLabel" parent="HowToPlayTab3/InnerColor" unique_id=844163302]
 z_index = 1
 layout_mode = 0
 offset_left = 135.0
@@ -434,7 +442,7 @@ theme_override_font_sizes/normal_font_size = 12
 text = "Score is determind by the quality of your cheese, and Dormies are after the best!"
 vertical_alignment = 1
 
-[node name="PrevPageButton2" type="Button" parent="HowToPlayTab3/DifficultyBox" unique_id=779170814]
+[node name="PrevPageButton2" type="Button" parent="HowToPlayTab3/InnerColor" unique_id=779170814]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 90.0
@@ -443,7 +451,7 @@ offset_bottom = 115.0
 theme_override_font_sizes/font_size = 12
 text = "<"
 
-[node name="RichTextLabel4" type="RichTextLabel" parent="HowToPlayTab3/DifficultyBox" unique_id=1761746328]
+[node name="RichTextLabel4" type="RichTextLabel" parent="HowToPlayTab3/InnerColor" unique_id=1761746328]
 z_index = 1
 layout_mode = 0
 offset_left = 265.0
@@ -465,6 +473,243 @@ position = Vector2(317, 142)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("10_rhgbh")
 
+[node name="ExtrasTab" type="ColorRect" parent="." unique_id=90316591]
+visible = false
+layout_mode = 0
+offset_left = 37.0
+offset_top = 397.0
+offset_right = 540.0
+offset_bottom = 636.0
+color = Color(1, 0.26666668, 0, 1)
+
+[node name="InnerColor" type="ColorRect" parent="ExtrasTab" unique_id=1949029084]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 488.0
+offset_bottom = 224.0
+color = Color(1, 0.6156863, 0, 1)
+
+[node name="Mimiqrcode" type="Sprite2D" parent="ExtrasTab/InnerColor" unique_id=1275793518]
+position = Vector2(332, 106.00003)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("11_rhgbh")
+
+[node name="CloseButton" type="Button" parent="ExtrasTab/InnerColor" unique_id=799556807]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 3.0
+offset_right = 470.0
+offset_bottom = 35.0
+text = "X"
+
+[node name="NextExtraButton" type="Button" parent="ExtrasTab/InnerColor" unique_id=103749402]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 97.0
+offset_right = 469.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 12
+text = ">"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="ExtrasTab/InnerColor" unique_id=1479114921]
+z_index = 1
+layout_mode = 0
+offset_left = 4.0
+offset_top = 43.0
+offset_right = 226.0
+offset_bottom = 161.0
+theme_override_colors/default_color = Color(1, 0.80784315, 0, 1)
+text = "This project was made to celebrate Nemimi Yane's 2nd birthday.
+Please support Mimi and follow her here:
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExtrasTab2" type="ColorRect" parent="." unique_id=1322359278]
+visible = false
+layout_mode = 0
+offset_left = 37.0
+offset_top = 397.0
+offset_right = 540.0
+offset_bottom = 636.0
+color = Color(1, 0.26666668, 0, 1)
+
+[node name="InnerColor" type="ColorRect" parent="ExtrasTab2" unique_id=441778842]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 488.0
+offset_bottom = 224.0
+color = Color(1, 0.6156863, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ExtrasTab2/InnerColor" unique_id=1049249399]
+z_index = 1
+layout_mode = 0
+offset_left = 39.0
+offset_top = -1.0
+offset_right = 214.0
+offset_bottom = 48.0
+theme_override_colors/default_color = Color(1, 0.80784315, 0, 1)
+text = "Thank you to all contibuting Dormies!
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="ExtrasTab2/InnerColor" unique_id=134120138]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 3.0
+offset_right = 470.0
+offset_bottom = 35.0
+text = "X"
+
+[node name="BackExtraButton" type="Button" parent="ExtrasTab2/InnerColor" unique_id=1152997520]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 95.0
+offset_right = 20.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 12
+text = "<"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="ExtrasTab2/InnerColor" unique_id=1276007094]
+z_index = 1
+layout_mode = 0
+offset_left = 222.0
+offset_top = -1.0
+offset_right = 433.0
+offset_bottom = 48.0
+theme_override_colors/default_color = Color(1, 0.80784315, 0, 1)
+text = "Beat Hard Mode and Collect them all for a gift!
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KBarn" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=1047151019]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 51.0
+offset_right = 117.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "KBarn"
+
+[node name="KBarn" type="AudioStreamPlayer" parent="ExtrasTab2/InnerColor/KBarn" unique_id=1429888575]
+stream = ExtResource("12_kvwfe")
+
+[node name="Lam" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=1191268218]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 82.0
+offset_right = 117.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "Lam"
+
+[node name="Lam" type="AudioStreamPlayer" parent="ExtrasTab2/InnerColor/Lam" unique_id=1663420972]
+stream = ExtResource("13_l4tom")
+
+[node name="mistfist" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=1041192171]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 113.0
+offset_right = 117.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "mistfist"
+
+[node name="mistfist" type="AudioStreamPlayer" parent="ExtrasTab2/InnerColor/mistfist" unique_id=894034908]
+stream = ExtResource("14_y8ura")
+
+[node name="plarty" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=1948791575]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 144.0
+offset_right = 128.0
+offset_bottom = 175.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "plarty"
+
+[node name="plarty" type="AudioStreamPlayer" parent="ExtrasTab2/InnerColor/plarty" unique_id=1403384473]
+stream = ExtResource("15_aav61")
+
+[node name="PrivateShorty" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=1718944507]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 51.0
+offset_right = 263.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "PrivateShorty"
+
+[node name="PrivateShorty" type="AudioStreamPlayer" parent="ExtrasTab2/InnerColor/PrivateShorty" unique_id=2052540028]
+stream = ExtResource("16_a64np")
+
+[node name="Samby" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=1294389988]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 82.0
+offset_right = 263.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "Samby"
+
+[node name="Samby" type="AudioStreamPlayer" parent="ExtrasTab2/InnerColor/Samby" unique_id=1535329083]
+stream = ExtResource("17_g2tdu")
+
+[node name="HardMode" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=1883044680]
+layout_mode = 0
+offset_left = 225.0
+offset_top = -2.0
+offset_right = 359.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+
+[node name="WinButton" type="Button" parent="ExtrasTab2/InnerColor" unique_id=256337336]
+visible = false
+layout_mode = 0
+offset_left = 327.0
+offset_top = 90.0
+offset_right = 415.0
+offset_bottom = 166.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+text = "You Win!"
+
+[node name="MimiButton" type="Button" parent="ExtrasTab2/InnerColor" unique_id=798393884]
+visible = false
+layout_mode = 0
+offset_left = 38.0
+offset_top = -407.0
+offset_right = 918.0
+offset_bottom = 474.0
+scale = Vector2(0.45, 0.45)
+icon = ExtResource("18_l4tom")
+
+[node name="DownloadLabel" type="RichTextLabel" parent="ExtrasTab2" unique_id=455415547]
+visible = false
+layout_mode = 0
+offset_left = 71.0
+offset_top = 196.0
+offset_right = 450.0
+offset_bottom = 234.0
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+text = "Check your Downloads folder for your full prize!"
+
 [connection signal="pressed" from="MainMenuTab/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="MainMenuTab/HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
 [connection signal="pressed" from="MainMenuTab/ExtraButton" to="." method="_on_extra_button_pressed"]
@@ -474,10 +719,22 @@ texture = ExtResource("10_rhgbh")
 [connection signal="pressed" from="NewGameTab/DifficultyBox/CustomButton" to="." method="_on_custom_button_pressed"]
 [connection signal="value_changed" from="NewGameTab/DifficultyBox/VSlider" to="." method="_on_v_slider_value_changed"]
 [connection signal="pressed" from="NewGameTab/DifficultyBox/CloseButton" to="." method="_on_close_button_pressed"]
-[connection signal="pressed" from="HowToPlayTab/DifficultyBox/CloseButton" to="." method="_on_close_button_pressed"]
-[connection signal="pressed" from="HowToPlayTab/DifficultyBox/NextPageButton" to="." method="_on_next_page_button_pressed"]
-[connection signal="pressed" from="HowToPlayTab2/DifficultyBox/CloseButton" to="." method="_on_close_button_pressed"]
-[connection signal="pressed" from="HowToPlayTab2/DifficultyBox/NextPageButton2" to="." method="_on_next_page_button_2_pressed"]
-[connection signal="pressed" from="HowToPlayTab2/DifficultyBox/PrevPageButton" to="." method="_on_prev_page_button_pressed"]
-[connection signal="pressed" from="HowToPlayTab3/DifficultyBox/CloseButton" to="." method="_on_close_button_pressed"]
-[connection signal="pressed" from="HowToPlayTab3/DifficultyBox/PrevPageButton2" to="." method="_on_prev_page_button_2_pressed"]
+[connection signal="pressed" from="HowToPlayTab/InnerColor/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="HowToPlayTab/InnerColor/NextPageButton" to="." method="_on_next_page_button_pressed"]
+[connection signal="pressed" from="HowToPlayTab2/InnerColor/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="HowToPlayTab2/InnerColor/NextPageButton2" to="." method="_on_next_page_button_2_pressed"]
+[connection signal="pressed" from="HowToPlayTab2/InnerColor/PrevPageButton" to="." method="_on_prev_page_button_pressed"]
+[connection signal="pressed" from="HowToPlayTab3/InnerColor/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="HowToPlayTab3/InnerColor/PrevPageButton2" to="." method="_on_prev_page_button_2_pressed"]
+[connection signal="pressed" from="ExtrasTab/InnerColor/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="ExtrasTab/InnerColor/NextExtraButton" to="." method="_on_next_extra_button_pressed"]
+[connection signal="pressed" from="ExtrasTab2/InnerColor/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="ExtrasTab2/InnerColor/BackExtraButton" to="." method="_on_back_extra_button_pressed"]
+[connection signal="pressed" from="ExtrasTab2/InnerColor/KBarn" to="." method="_on_check_pressed" binds= ["KBarn"]]
+[connection signal="pressed" from="ExtrasTab2/InnerColor/Lam" to="." method="_on_check_pressed" binds= ["Lam"]]
+[connection signal="pressed" from="ExtrasTab2/InnerColor/mistfist" to="." method="_on_check_pressed" binds= ["mistfist"]]
+[connection signal="pressed" from="ExtrasTab2/InnerColor/plarty" to="." method="_on_check_pressed" binds= ["plarty"]]
+[connection signal="pressed" from="ExtrasTab2/InnerColor/PrivateShorty" to="." method="_on_check_pressed" binds= ["PrivateShorty"]]
+[connection signal="pressed" from="ExtrasTab2/InnerColor/Samby" to="." method="_on_check_pressed" binds= ["Samby"]]
+[connection signal="pressed" from="ExtrasTab2/InnerColor/WinButton" to="." method="_on_win_button_pressed"]
+[connection signal="pressed" from="ExtrasTab2/InnerColor/MimiButton" to="." method="_on_mimi_art_pressed"]

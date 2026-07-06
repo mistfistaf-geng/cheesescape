@@ -20,6 +20,7 @@ func _ready():
 	score = get_node("ColorRect/Score/CurrentScore")
 	mines.text = str(Global.num_mines)
 	score.text = str(current_score)
+	Global.dormies.shuffle()
 	
 func create_grid():
 	# Create runes and place them in 2D array
@@ -199,6 +200,19 @@ func game_over():
 	$ColorRect/Title.text = "Game Over!"
 	$ColorRect/Title.visible = true
 	stop_timer()
+	var out = false
+	for dormie in Global.dormies:
+		if dormie[1] == false:
+			dormie[1] = true
+			var explosion = get_node(dormie[0])
+			explosion.play()
+			out = true
+			break
+		else:
+			pass
+	if !out:
+		var explosion = get_node(Global.dormies.pick_random()[0])
+		explosion.play()
 
 func check_win_condition():
 	for row in runes:

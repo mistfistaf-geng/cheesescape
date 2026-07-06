@@ -1,6 +1,6 @@
 extends Control
 
-const MAIN_SCENE = preload("res://main.tscn")
+@onready var req := $HTTPRequest
 
 func _on_new_game_button_pressed() -> void:
 	$NewGameTab.visible = true
@@ -72,8 +72,6 @@ func _on_how_to_play_button_pressed() -> void:
 	$MainMenuTab/HowToPlayButton.disabled = true
 	$MainMenuTab/ExtraButton.disabled = true
 	
-func _on_extra_button_pressed() -> void:
-	pass # Replace with function body.
 
 
 func _on_next_page_button_pressed() -> void:
@@ -94,3 +92,51 @@ func _on_prev_page_button_pressed() -> void:
 func _on_prev_page_button_2_pressed() -> void:
 	$HowToPlayTab3.visible = false
 	$HowToPlayTab2.visible = true
+
+func _on_extra_button_pressed() -> void:
+	$ExtrasTab.visible = true
+	$MainMenuTab/NewGameButton.disabled = true
+	$MainMenuTab/HowToPlayButton.disabled = true
+	$MainMenuTab/ExtraButton.disabled = true
+
+
+func _on_next_extra_button_pressed() -> void:
+	$ExtrasTab.visible = false
+	$ExtrasTab2.visible = true
+	if Global.num_wins >= 3:
+		$ExtrasTab2/InnerColor/HardMode.button_pressed = true
+	var numFound = 0
+	for dormie in Global.dormies:
+		if dormie[1] == true:
+			var button = get_node("ExtrasTab2/InnerColor/"+dormie[0])
+			button.button_pressed = true
+			button.disabled = false
+			numFound += 1
+	if numFound == 6 and $ExtrasTab2/InnerColor/HardMode.button_pressed:
+		$ExtrasTab2/InnerColor/WinButton.visible = true
+
+func _on_back_extra_button_pressed() -> void:
+	$ExtrasTab.visible = true
+	$ExtrasTab2.visible = false
+
+
+func _on_check_pressed(name: String) -> void:
+	var button = get_node("ExtrasTab2/InnerColor/"+name)
+	button.button_pressed = true
+	var explosion = get_node("ExtrasTab2/InnerColor/"+name+"/"+name)
+	explosion.play()
+
+
+func _on_win_button_pressed() -> void:
+	$ExtrasTab2/InnerColor/MimiButton.visible = true
+
+
+func _on_mimi_art_pressed() -> void:
+	var export_image := OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS) +"/InkBirthdayArt.png"
+	var img: Image = load("res://assets/inkartwip.png").get_image()
+	var os = OS.get_name()
+	if os == "Windows":
+		print(img.save_png(export_image))
+	elif os == "Web":
+		JavaScriptBridge.download_buffer(img.to_utf8(), "InkBirthdayArt.png")
+	$ExtrasTab2/DownloadLabel.visible = true
