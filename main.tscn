@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bh3e1okitqcec" path="res://assets/dormies/plarty.mp3" id="5_4c57u"]
 [ext_resource type="AudioStream" uid="uid://csl2rvjlivp20" path="res://assets/dormies/PrivateShorty.mp3" id="6_efxa6"]
 [ext_resource type="AudioStream" uid="uid://nyg3rf57ffex" path="res://assets/dormies/Samby.mp3" id="7_dg77c"]
+[ext_resource type="AudioStream" uid="uid://djt8s36dkq4bj" path="res://assets/dormies/MegaDeuceX.mp3" id="8_5vw27"]
 
 [node name="Main" type="Node2D" unique_id=17708068]
 
@@ -111,6 +112,9 @@ stream = ExtResource("6_efxa6")
 
 [node name="Samby" type="AudioStreamPlayer" parent="Game" unique_id=611178466]
 stream = ExtResource("7_dg77c")
+
+[node name="MegaDeuceX" type="AudioStreamPlayer" parent="Game" unique_id=79342137]
+stream = ExtResource("8_5vw27")
 
 [connection signal="pressed" from="Game/RestartButton" to="Game" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Game/MainMenuButton" to="Game" method="_on_main_menu_button_pressed"]

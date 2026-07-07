@@ -120,10 +120,10 @@ func _on_back_extra_button_pressed() -> void:
 	$ExtrasTab2.visible = false
 
 
-func _on_check_pressed(name: String) -> void:
-	var button = get_node("ExtrasTab2/InnerColor/"+name)
+func _on_check_pressed(check: String) -> void:
+	var button = get_node("ExtrasTab2/InnerColor/"+check)
 	button.button_pressed = true
-	var explosion = get_node("ExtrasTab2/InnerColor/"+name+"/"+name)
+	var explosion = get_node("ExtrasTab2/InnerColor/"+check+"/"+check)
 	explosion.play()
 
 

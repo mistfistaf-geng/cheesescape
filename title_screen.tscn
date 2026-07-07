@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://csl2rvjlivp20" path="res://assets/dormies/PrivateShorty.mp3" id="16_a64np"]
 [ext_resource type="AudioStream" uid="uid://nyg3rf57ffex" path="res://assets/dormies/Samby.mp3" id="17_g2tdu"]
 [ext_resource type="Texture2D" uid="uid://yiluq4c08cxn" path="res://assets/inkartwip.png" id="18_l4tom"]
+[ext_resource type="AudioStream" uid="uid://djt8s36dkq4bj" path="res://assets/dormies/MegaDeuceX.mp3" id="18_y8ura"]
 
 [sub_resource type="Theme" id="Theme_v6p8y"]
 
@@ -68,13 +69,25 @@ texture = ExtResource("2_ak2if")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MainMenuTab" unique_id=1462124160]
 layout_mode = 0
-offset_left = 177.0
+offset_left = 1.0
 offset_top = 68.0
-offset_right = 399.0
-offset_bottom = 184.0
+offset_right = 575.0
+offset_bottom = 114.0
 theme_override_colors/default_color = Color(1, 0.47058824, 0, 1)
-theme_override_font_sizes/normal_font_size = 33
+theme_override_font_sizes/normal_font_size = 36
 text = "CHEESESCAPE"
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MainMenuTab" unique_id=1766022556]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 108.0
+offset_right = 576.0
+offset_bottom = 154.0
+theme_override_colors/default_color = Color(1, 0.47058824, 0, 1)
+theme_override_font_sizes/normal_font_size = 12
+text = "by: mistfist"
+horizontal_alignment = 1
 
 [node name="NewGameTab" type="ColorRect" parent="." unique_id=1449704699]
 visible = false
@@ -670,6 +683,20 @@ text = "Samby"
 [node name="Samby" type="AudioStreamPlayer" parent="ExtrasTab2/InnerColor/Samby" unique_id=1535329083]
 stream = ExtResource("17_g2tdu")
 
+[node name="MegaDeuceX" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=796851688]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 113.0
+offset_right = 263.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "MegaDeuceX"
+
+[node name="MegaDeuceX" type="AudioStreamPlayer" parent="ExtrasTab2/InnerColor/MegaDeuceX" unique_id=806284774]
+stream = ExtResource("18_y8ura")
+
 [node name="HardMode" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=1883044680]
 layout_mode = 0
 offset_left = 225.0
@@ -736,5 +763,6 @@ text = "Check your Downloads folder for your full prize!"
 [connection signal="pressed" from="ExtrasTab2/InnerColor/plarty" to="." method="_on_check_pressed" binds= ["plarty"]]
 [connection signal="pressed" from="ExtrasTab2/InnerColor/PrivateShorty" to="." method="_on_check_pressed" binds= ["PrivateShorty"]]
 [connection signal="pressed" from="ExtrasTab2/InnerColor/Samby" to="." method="_on_check_pressed" binds= ["Samby"]]
+[connection signal="pressed" from="ExtrasTab2/InnerColor/MegaDeuceX" to="." method="_on_check_pressed" binds= ["MegaDeuceX"]]
 [connection signal="pressed" from="ExtrasTab2/InnerColor/WinButton" to="." method="_on_win_button_pressed"]
 [connection signal="pressed" from="ExtrasTab2/InnerColor/MimiButton" to="." method="_on_mimi_art_pressed"]
