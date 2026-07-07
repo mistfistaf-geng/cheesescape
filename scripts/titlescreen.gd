@@ -138,5 +138,5 @@ func _on_mimi_art_pressed() -> void:
 	if os == "Windows":
 		print(img.save_png(export_image))
 	elif os == "Web":
-		JavaScriptBridge.download_buffer(img.to_utf8(), "InkBirthdayArt.png")
+		JavaScriptBridge.download_buffer(img.save_png_to_buffer(), "InkBirthdayArt.png", "image/png")
 	$ExtrasTab2/DownloadLabel.visible = true
