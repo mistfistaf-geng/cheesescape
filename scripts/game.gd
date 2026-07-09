@@ -3,7 +3,7 @@ extends Node2D
 
 const RUNE_SCENE = preload("res://rune.tscn")
 @onready var click = get_node("Click")
-@onready var bgm = get_node("WhiteGirlWednesdayWhistle")
+@onready var bgm = get_node("AudioStreamPlayer2D")
 @export var rows: int = 18 # Number of rows
 @export var cols: int = 18 # Number of columns
 
@@ -17,7 +17,7 @@ var score
 
 func _ready():
 	if not Global.mute_bgm:
-		bgm.play()
+		bgm.play(0)
 	create_grid()
 	clock = get_node("ColorRect/Clock")
 	mines = get_node("ColorRect/Mines/CurrentMines")
