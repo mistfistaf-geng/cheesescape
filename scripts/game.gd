@@ -2,6 +2,8 @@
 extends Node2D
 
 const RUNE_SCENE = preload("res://rune.tscn")
+@onready var click = get_node("Click")
+@onready var bgm = get_node("WhiteGirlWednesdayWhistle")
 @export var rows: int = 18 # Number of rows
 @export var cols: int = 18 # Number of columns
 
@@ -14,6 +16,8 @@ var mines
 var score
 
 func _ready():
+	if not Global.mute_bgm:
+		bgm.play()
 	create_grid()
 	clock = get_node("ColorRect/Clock")
 	mines = get_node("ColorRect/Mines/CurrentMines")
@@ -73,6 +77,8 @@ func calculate_adjacent_mines():
 				rune.adjacent_mines = count_adjacent_mines(x, y)
 				
 func _on_rune_pressed(x: int, y: int):
+	if not Global.mute_sound:
+		click.play()
 	var rune = runes[y][x]
 	if not first_click_complete:
 		first_click_complete = true
@@ -192,6 +198,7 @@ func _on_flag_nieghbors(x: int, y: int):
 	
 # Reveal all mines and end game
 func game_over():
+	click.stop()
 	for row in runes:
 		for rune in row:
 			rune.disabled = true;
@@ -204,15 +211,18 @@ func game_over():
 	for dormie in Global.dormies:
 		if dormie[1] == false:
 			dormie[1] = true
+			Global.save_game()
 			var explosion = get_node(dormie[0])
-			explosion.play()
+			if not Global.mute_sound:
+				explosion.play()
 			out = true
 			break
 		else:
 			pass
 	if !out:
 		var explosion = get_node(Global.dormies.pick_random()[0])
-		explosion.play()
+		if not Global.mute_sound:
+			explosion.play()
 
 func check_win_condition():
 	for row in runes:
@@ -228,13 +238,14 @@ func game_won():
 			rune.disabled = true
 	$ColorRect/Title.text = "You Won!"
 	$ColorRect/Title.visible = true
-	if Global.num_mines == 40 and Global.num_wins == 0:
+	if Global.num_wins == 0 and Global.num_mines == 40:
 		Global.num_wins = 1
-	elif Global.num_mines == 60 and Global.num_wins == 1:
+	elif Global.num_wins == 1 and Global.num_mines == 60:
 		Global.num_wins = 2
-	elif Global.num_mines == 80 and Global.num_wins == 2:
-		Global.num_wins = 3		
+	elif Global.num_wins == 2 and Global.num_mines == 80:
+		Global.num_wins = 3
 	stop_timer()
+	Global.save_game()
 	
 func _on_restart_button_pressed() -> void:
 	restart()

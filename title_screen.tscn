@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bovxqdgc5w0yv" path="res://scripts/titlescreen.gd" id="1_v6p8y"]
 [ext_resource type="Texture2D" uid="uid://b0g4q702xtdxx" path="res://assets/icon.png" id="2_ak2if"]
+[ext_resource type="Texture2D" uid="uid://briupqwhtmrsi" path="res://assets/settings.png" id="3_aav61"]
 [ext_resource type="Texture2D" uid="uid://cmfrtmr0c7pew" path="res://assets/lock.png" id="3_ig5kc"]
 [ext_resource type="Texture2D" uid="uid://xj2j78kgpyp5" path="res://assets/unlock.png" id="4_05l2w"]
 [ext_resource type="Texture2D" uid="uid://d247fagjdbg0d" path="res://assets/Tutorial/FreshStart.png" id="5_tpml5"]
@@ -19,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://nyg3rf57ffex" path="res://assets/dormies/Samby.mp3" id="17_g2tdu"]
 [ext_resource type="Texture2D" uid="uid://yiluq4c08cxn" path="res://assets/inkartwip.png" id="18_l4tom"]
 [ext_resource type="AudioStream" uid="uid://djt8s36dkq4bj" path="res://assets/dormies/MegaDeuceX.mp3" id="18_y8ura"]
+[ext_resource type="AudioStream" uid="uid://dhwqxw5j5tqer" path="res://assets/click.mp3" id="21_a64np"]
 
 [sub_resource type="Theme" id="Theme_v6p8y"]
 
@@ -70,7 +72,7 @@ texture = ExtResource("2_ak2if")
 [node name="RichTextLabel" type="RichTextLabel" parent="MainMenuTab" unique_id=1462124160]
 layout_mode = 0
 offset_left = 1.0
-offset_top = 68.0
+offset_top = 59.0
 offset_right = 575.0
 offset_bottom = 114.0
 theme_override_colors/default_color = Color(1, 0.47058824, 0, 1)
@@ -88,6 +90,70 @@ theme_override_colors/default_color = Color(1, 0.47058824, 0, 1)
 theme_override_font_sizes/normal_font_size = 12
 text = "by: mistfist"
 horizontal_alignment = 1
+
+[node name="Settings" type="Button" parent="MainMenuTab" unique_id=1013439018]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 11.0
+offset_right = 53.0
+offset_bottom = 51.0
+icon = ExtResource("3_aav61")
+
+[node name="SettingsTab" type="ColorRect" parent="." unique_id=627912085]
+visible = false
+layout_mode = 0
+offset_left = 90.0
+offset_top = 413.0
+offset_right = 486.0
+offset_bottom = 636.0
+color = Color(1, 0.26666668, 0, 1)
+
+[node name="DifficultyBox" type="ColorRect" parent="SettingsTab" unique_id=1393766253]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 381.0
+offset_bottom = 211.0
+color = Color(1, 0.6156863, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SettingsTab/DifficultyBox" unique_id=1775246397]
+z_index = 1
+layout_mode = 0
+offset_left = -14.0
+offset_top = -4.0
+offset_right = 380.0
+offset_bottom = 43.0
+theme_override_colors/default_color = Color(1, 0.80784315, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+text = "Mute:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="SettingsTab/DifficultyBox" unique_id=1794619281]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 3.0
+offset_right = 363.0
+offset_bottom = 35.0
+text = "X"
+
+[node name="MuteBgm" type="CheckBox" parent="SettingsTab/DifficultyBox" unique_id=226211699]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 57.0
+offset_right = 215.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+text = "BGM"
+
+[node name="MuteSound" type="CheckBox" parent="SettingsTab/DifficultyBox" unique_id=1042315802]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 111.0
+offset_right = 227.0
+offset_bottom = 142.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+text = "Sound"
 
 [node name="NewGameTab" type="ColorRect" parent="." unique_id=1449704699]
 visible = false
@@ -150,25 +216,25 @@ offset_right = 262.0
 offset_bottom = 188.0
 text = "Custom"
 
-[node name="EasyLock" type="Sprite2D" parent="NewGameTab/DifficultyBox" unique_id=915445590]
-position = Vector2(89.00001, 131.00003)
+[node name="EasyLock" type="Sprite2D" parent="NewGameTab/DifficultyBox" unique_id=1767941407]
+position = Vector2(89, 55)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_ig5kc")
+texture = ExtResource("4_05l2w")
 
 [node name="MedLock" type="Sprite2D" parent="NewGameTab/DifficultyBox" unique_id=354442119]
 position = Vector2(89, 93)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_ig5kc")
 
-[node name="HardLock" type="Sprite2D" parent="NewGameTab/DifficultyBox" unique_id=470889895]
-position = Vector2(89.00001, 169.00003)
+[node name="HardLock" type="Sprite2D" parent="NewGameTab/DifficultyBox" unique_id=915445590]
+position = Vector2(89, 131)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_ig5kc")
 
-[node name="CustomLock" type="Sprite2D" parent="NewGameTab/DifficultyBox" unique_id=1767941407]
-position = Vector2(89, 55)
+[node name="CustomLock" type="Sprite2D" parent="NewGameTab/DifficultyBox" unique_id=470889895]
+position = Vector2(89.00001, 169.00003)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("4_05l2w")
+texture = ExtResource("3_ig5kc")
 
 [node name="VSlider" type="VSlider" parent="NewGameTab/DifficultyBox" unique_id=1095141576]
 visible = false
@@ -737,9 +803,16 @@ offset_bottom = 234.0
 theme_override_colors/default_color = Color(1, 0, 0, 1)
 text = "Check your Downloads folder for your full prize!"
 
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=2081204454]
+stream = ExtResource("21_a64np")
+
 [connection signal="pressed" from="MainMenuTab/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="MainMenuTab/HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
 [connection signal="pressed" from="MainMenuTab/ExtraButton" to="." method="_on_extra_button_pressed"]
+[connection signal="pressed" from="MainMenuTab/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="SettingsTab/DifficultyBox/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="SettingsTab/DifficultyBox/MuteBgm" to="." method="_on_mute_bgm_pressed"]
+[connection signal="pressed" from="SettingsTab/DifficultyBox/MuteSound" to="." method="_on_mute_sound_pressed"]
 [connection signal="pressed" from="NewGameTab/DifficultyBox/EasyButton" to="." method="_on_easy_button_pressed"]
 [connection signal="pressed" from="NewGameTab/DifficultyBox/MedButton" to="." method="_on_med_button_pressed"]
 [connection signal="pressed" from="NewGameTab/DifficultyBox/HardButton" to="." method="_on_hard_button_pressed"]

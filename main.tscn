@@ -8,6 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://csl2rvjlivp20" path="res://assets/dormies/PrivateShorty.mp3" id="6_efxa6"]
 [ext_resource type="AudioStream" uid="uid://nyg3rf57ffex" path="res://assets/dormies/Samby.mp3" id="7_dg77c"]
 [ext_resource type="AudioStream" uid="uid://djt8s36dkq4bj" path="res://assets/dormies/MegaDeuceX.mp3" id="8_5vw27"]
+[ext_resource type="AudioStream" uid="uid://dhwqxw5j5tqer" path="res://assets/click.mp3" id="9_kek77"]
+[ext_resource type="AudioStream" uid="uid://bnolyj5d1kdra" path="res://assets/WhiteGirlWednesdayWhistle.mp3" id="10_4c57u"]
 
 [node name="Main" type="Node2D" unique_id=17708068]
 
@@ -115,6 +117,13 @@ stream = ExtResource("7_dg77c")
 
 [node name="MegaDeuceX" type="AudioStreamPlayer" parent="Game" unique_id=79342137]
 stream = ExtResource("8_5vw27")
+
+[node name="Click" type="AudioStreamPlayer" parent="Game" unique_id=888110208]
+stream = ExtResource("9_kek77")
+
+[node name="WhiteGirlWednesdayWhistle" type="AudioStreamPlayer" parent="Game" unique_id=517219294]
+stream = ExtResource("10_4c57u")
+parameters/looping = true
 
 [connection signal="pressed" from="Game/RestartButton" to="Game" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Game/MainMenuButton" to="Game" method="_on_main_menu_button_pressed"]
