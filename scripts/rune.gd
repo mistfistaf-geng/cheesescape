@@ -52,3 +52,14 @@ func reveal_rune():
 		texture_normal.region = Rect2(Vector2(x_pos,34), rune_size)
 		if adjacent_mines == 0:
 			texture_normal.region = Rect2(Vector2(34,0), rune_size)
+
+func mimi_kill():
+	if is_mine:
+		is_flagged = true
+		texture_normal.region = Rect2(Vector2(238,0),rune_size)
+	else:
+		is_revealed = true
+		var x_pos = (adjacent_mines - 1) * 34
+		texture_normal.region = Rect2(Vector2(x_pos,34), rune_size)
+		if adjacent_mines == 0:
+			texture_normal.region = Rect2(Vector2(34,0), rune_size)

@@ -2,6 +2,7 @@ extends Control
 
 @onready var req := $HTTPRequest
 @onready var click = get_node("Click")
+@onready var getWorse = get_node("BonusTab5/InnerColor/Mimigetworse")
 
 func _on_new_game_button_pressed() -> void:
 	if not Global.mute_sound:
@@ -81,6 +82,7 @@ func _on_close_button_pressed() -> void:
 	$MainMenuTab/HowToPlayButton.disabled = false
 	$MainMenuTab/ExtraButton.disabled = false
 	$SettingsTab.visible = false
+	$BonusTab5.visible = false
 	if not Global.mute_sound:
 		click.play()
 
@@ -203,6 +205,7 @@ func _on_mute_sound_pressed() -> void:
 func _on_settings_pressed() -> void:
 	if not Global.mute_sound:
 		click.play()
+	Global.load_game()
 	$NewGameTab.visible = false
 	$HowToPlayTab.visible = false
 	$HowToPlayTab2.visible = false
@@ -212,6 +215,117 @@ func _on_settings_pressed() -> void:
 	$MainMenuTab/NewGameButton.disabled = false
 	$MainMenuTab/HowToPlayButton.disabled = false
 	$MainMenuTab/ExtraButton.disabled = false
+	$BonusTab1.visible = false
+	$BonusTab2.visible = false
+	$BonusTab3.visible = false
+	$BonusTab4.visible = false
+	$BonusTab5.visible = false
 	$SettingsTab.visible = true
 	$SettingsTab/DifficultyBox/MuteBgm.button_pressed = Global.mute_bgm
 	$SettingsTab/DifficultyBox/MuteSound.button_pressed = Global.mute_sound
+
+
+func _on_bonus_button_pressed() -> void:
+	if not Global.mute_sound:
+		click.play()
+	$ExtrasTab2.visible = false
+	$BonusTab1.visible = true
+	Global.load_game()
+	if Global.quiz[0] != "temp":
+		$BonusTab1/InnerColor/LineEdit.text = Global.quiz[0]
+		$BonusTab2/InnerColor/OptionButton.selected = Global.quiz[1]
+		$BonusTab2/InnerColor/OptionButton2.selected = Global.quiz[2]
+		$BonusTab2/InnerColor/OptionButton3.selected = Global.quiz[3]
+		$BonusTab2/InnerColor/OptionButton4.selected = Global.quiz[4]
+		$BonusTab3/InnerColor/OptionButton.selected = Global.quiz[5]
+		$BonusTab3/InnerColor/OptionButton2.selected = Global.quiz[6]
+		$BonusTab3/InnerColor/OptionButton3.selected = Global.quiz[7]
+		$BonusTab3/InnerColor/OptionButton4.selected = Global.quiz[8]
+		$BonusTab4/InnerColor/OptionButton.selected = Global.quiz[9]
+		$BonusTab4/InnerColor/LineEdit.text = Global.quiz[10]
+		$BonusTab4/InnerColor/LineEdit2.text = Global.quiz[11]
+		$BonusTab4/InnerColor/OptionButton2.selected = Global.quiz[12]
+
+
+func _on_next_bonus_button_pressed() -> void:
+	if not Global.mute_sound:
+		click.play()
+	$BonusTab1.visible = false
+	$BonusTab2.visible = true
+
+
+func _on_next_bonus_button_2_pressed() -> void:
+	if not Global.mute_sound:
+		click.play()
+	$BonusTab2.visible = false
+	$BonusTab3.visible = true
+
+
+func _on_next_bonus_button_3_pressed() -> void:
+	if not Global.mute_sound:
+		click.play()
+	$BonusTab3.visible = false
+	$BonusTab4.visible = true
+
+
+func _on_next_bonus_button_4_pressed() -> void:
+	if not Global.mute_sound:
+		click.play()
+	$BonusTab4.visible = false
+	$BonusTab5.visible = true
+
+
+func _on_back_bonus_button_2_pressed() -> void:
+	if not Global.mute_sound:
+		click.play()
+	$BonusTab1.visible = true
+	$BonusTab2.visible = false
+
+
+func _on_back_bonus_button_3_pressed() -> void:
+	if not Global.mute_sound:
+		click.play()
+	$BonusTab2.visible = true
+	$BonusTab3.visible = false
+
+
+func _on_back_bonus_button_4_pressed() -> void:
+	if not Global.mute_sound:
+		click.play()
+	$BonusTab3.visible = true
+	$BonusTab4.visible = false
+
+
+func _on_back_bonus_button_5_pressed() -> void:
+	if not Global.mute_sound:
+		click.play()
+	$BonusTab4.visible = true
+	$BonusTab5.visible = false
+
+
+func _on_calc_button_pressed() -> void:
+	getWorse.play()
+	await get_tree().create_timer(6).timeout
+	$BonusTab5/InnerColor/RichTextLabel5.visible = true
+	$BonusTab5/InnerColor/RichTextLabel6.visible = true
+	$BonusTab5/InnerColor/MimiButton.visible = true
+	Global.mimi_love = true
+	Global.quiz[0] = $BonusTab1/InnerColor/LineEdit.text
+	Global.quiz[1] = $BonusTab2/InnerColor/OptionButton.selected
+	Global.quiz[2] = $BonusTab2/InnerColor/OptionButton2.selected
+	Global.quiz[3] = $BonusTab2/InnerColor/OptionButton3.selected
+	Global.quiz[4] = $BonusTab2/InnerColor/OptionButton4.selected
+	Global.quiz[5] = $BonusTab3/InnerColor/OptionButton.selected
+	Global.quiz[6] = $BonusTab3/InnerColor/OptionButton2.selected
+	Global.quiz[7] = $BonusTab3/InnerColor/OptionButton3.selected
+	Global.quiz[8] = $BonusTab3/InnerColor/OptionButton4.selected
+	Global.quiz[9] = $BonusTab4/InnerColor/OptionButton.selected
+	Global.quiz[10] = $BonusTab4/InnerColor/LineEdit.text
+	Global.quiz[11] = $BonusTab4/InnerColor/LineEdit2.text
+	Global.quiz[12] = $BonusTab4/InnerColor/OptionButton2.selected
+		
+	Global.save_game()
+
+
+func _on_mimi_button_pressed() -> void:
+	OS.shell_open("https://x.com/intent/user?screen_name=nemimiyane")

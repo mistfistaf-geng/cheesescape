@@ -7,13 +7,17 @@ var dormies = [["KBarn", false], ["Lam", false], ["mistfist", false],
 ["MegaDeuceX", false]]
 var mute_bgm = false
 var mute_sound = false
+var mimi_love = false
+var quiz = ["temp", 0, 0, 0, 0, 0, 0, 0, 0, 0, "0", "0", 0]
 
 func save():
 	var save_file = {
 		"num_wins" : num_wins,
 		"dormies" : dormies,
 		"mute_bgm" : mute_bgm,
-		"mute_sound" : mute_sound
+		"mute_sound" : mute_sound,
+		"mimi_love" : mimi_love,
+		"quiz" : quiz
 	}
 	return save_file
 	
@@ -28,8 +32,10 @@ func load_game():
 		return
 	var save_game = FileAccess.open("user://savegame.dat", FileAccess.READ)
 	var content = save_game.get_var()
-	print(content.get("dormies"))
+	print(content)
 	num_wins = content.get("num_wins")
 	dormies = content.get("dormies")
 	mute_bgm = content.get("mute_bgm")
 	mute_sound = content.get("mute_sound")
+	mimi_love = content.get("mimi_love")
+	quiz = content.get("quiz")

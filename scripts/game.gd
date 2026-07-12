@@ -5,6 +5,7 @@ const RUNE_SCENE = preload("res://rune.tscn")
 @onready var click = get_node("Click")
 @onready var tock = get_node("Tock")
 @onready var bgm = get_node("AudioStreamPlayer2D")
+@onready var getworse = get_node("Mimigetworse")
 @export var rows: int = 18 # Number of rows
 @export var cols: int = 18 # Number of columns
 
@@ -15,6 +16,7 @@ var first_click_complete = false
 var clock
 var mines
 var score
+var ring_press = false
 
 func _ready():
 	if not Global.mute_bgm:
@@ -79,23 +81,36 @@ func calculate_adjacent_mines():
 				
 func _on_rune_pressed(x: int, y: int):
 	var rune = runes[y][x]
-	if not Global.mute_sound and not rune.is_revealed:
-		click.play()
-	if not first_click_complete:
-		first_click_complete = true
-		var mine_positions = generate_mine_positions(Vector2i(x,y))
-		for pos in mine_positions:
-			runes[pos.y][pos.x].is_mine = true
-		calculate_adjacent_mines()
-		start_timer()
-		
-	if rune.is_mine:
-		rune.fail()
-		game_over()
+	if Global.mimi_love == true && ring_press == true:
+		ring_press = false
+		if not Global.mute_sound and not rune.is_revealed:
+			getworse.play()
+		if rune.is_mine:
+			rune.mimi_kill()
+		else:
+			reveal_rune_and_neighbors(x,y)
+			if check_win_condition():
+				game_won()
 	else:
-		reveal_rune_and_neighbors(x,y)
-		if check_win_condition():
-			game_won()
+		if not Global.mute_sound and not rune.is_revealed:
+			click.play()
+		if not first_click_complete:
+			first_click_complete = true
+			if Global.mimi_love == true:
+				$ColorRect/RingButton.visible = true
+			var mine_positions = generate_mine_positions(Vector2i(x,y))
+			for pos in mine_positions:
+				runes[pos.y][pos.x].is_mine = true
+			calculate_adjacent_mines()
+			start_timer()
+		
+		if rune.is_mine:
+			rune.fail()
+			game_over()
+		else:
+			reveal_rune_and_neighbors(x,y)
+			if check_win_condition():
+				game_won()
 
 func reveal_rune_and_neighbors(x: int, y: int):
 	if x < 0 or y < 0 or x >= cols or y >= rows:
@@ -302,3 +317,9 @@ func _on_main_menu_button_pressed() -> void:
 	score.text = str(current_score)
 	restart_timer()
 	get_tree().change_scene_to_file("res://title_screen.tscn")
+
+
+func _on_ring_pressed() -> void:
+	ring_press = true
+	$ColorRect/RingButton.disabled = true
+	$ColorRect/RingButton.icon = load("res://assets/mimibutton_pressed.png")
