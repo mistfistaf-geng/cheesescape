@@ -5,6 +5,7 @@ var is_mine: bool = false
 var is_revealed: bool = false
 var adjacent_mines: int = 0
 var is_flagged: bool = false
+var is_middle_clicked: bool = false
 
 signal rune_pressed
 signal middle_press

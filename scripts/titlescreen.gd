@@ -168,6 +168,7 @@ func _on_win_button_pressed() -> void:
 	if not Global.mute_sound:
 		click.play()
 	$ExtrasTab2/InnerColor/MimiButton.visible = true
+	$ExtrasTab2/DownloadLabel2.visible = true
 
 
 func _on_mimi_art_pressed() -> void:

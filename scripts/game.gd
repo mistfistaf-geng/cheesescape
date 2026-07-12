@@ -3,6 +3,7 @@ extends Node2D
 
 const RUNE_SCENE = preload("res://rune.tscn")
 @onready var click = get_node("Click")
+@onready var tock = get_node("Tock")
 @onready var bgm = get_node("AudioStreamPlayer2D")
 @export var rows: int = 18 # Number of rows
 @export var cols: int = 18 # Number of columns
@@ -77,9 +78,9 @@ func calculate_adjacent_mines():
 				rune.adjacent_mines = count_adjacent_mines(x, y)
 				
 func _on_rune_pressed(x: int, y: int):
-	if not Global.mute_sound:
-		click.play()
 	var rune = runes[y][x]
+	if not Global.mute_sound and not rune.is_revealed:
+		click.play()
 	if not first_click_complete:
 		first_click_complete = true
 		var mine_positions = generate_mine_positions(Vector2i(x,y))
@@ -132,7 +133,10 @@ func _on_middle_press(x: int, y: int):
 						game_over()
 						return
 						
-	if mine_count == correct_count:
+	if mine_count == correct_count and rune.is_middle_clicked == false:
+		rune.is_middle_clicked = true;
+		if not Global.mute_sound:
+			click.play()
 		reveal_neighbors_middle_press(x,y)
 		if check_win_condition():
 			game_won()
@@ -164,6 +168,8 @@ func _on_flag_place(x: int, y: int):
 	if rune.is_flagged:
 		num_flags += 1
 	else:
+		if not Global.mute_sound:
+			tock.play()
 		num_flags -= 1
 	if (Global.num_mines - num_flags) >= 0:
 		mines.text = str(Global.num_mines - num_flags)
@@ -191,6 +197,8 @@ func _on_flag_nieghbors(x: int, y: int):
 			if not neighbor.is_flagged:
 				num_flags += 1
 				neighbor.toggle_flagging()
+				if not Global.mute_sound:
+					tock.play()
 	if (Global.num_mines - num_flags) >= 0:
 		mines.text = str(Global.num_mines - num_flags)
 	else:
