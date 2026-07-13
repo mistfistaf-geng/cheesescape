@@ -231,6 +231,8 @@ func _on_bonus_button_pressed() -> void:
 	$ExtrasTab2.visible = false
 	$BonusTab1.visible = true
 	Global.load_game()
+	if Global.quiz[0] == null:
+		Global.quiz = ["temp", 0, 0, 0, 0, 0, 0, 0, 0, 0, "0", "0", 0]
 	if Global.quiz[0] != "temp":
 		$BonusTab1/InnerColor/LineEdit.text = Global.quiz[0]
 		$BonusTab2/InnerColor/OptionButton.selected = Global.quiz[1]
