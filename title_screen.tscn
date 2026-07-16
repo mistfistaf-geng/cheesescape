@@ -20,10 +20,27 @@
 [ext_resource type="AudioStream" uid="uid://nyg3rf57ffex" path="res://assets/dormies/Samby.mp3" id="17_g2tdu"]
 [ext_resource type="Texture2D" uid="uid://yiluq4c08cxn" path="res://assets/inkartwip.png" id="18_l4tom"]
 [ext_resource type="AudioStream" uid="uid://djt8s36dkq4bj" path="res://assets/dormies/MegaDeuceX.mp3" id="18_y8ura"]
+[ext_resource type="AudioStream" uid="uid://cmt42lfe577wg" path="res://assets/dormies/Tuna.mp3" id="20_fd0ao"]
 [ext_resource type="AudioStream" uid="uid://dhwqxw5j5tqer" path="res://assets/click.mp3" id="21_a64np"]
 [ext_resource type="Texture2D" uid="uid://dmd8555mmldpa" path="res://assets/mimibutton_pressed.png" id="21_g2tdu"]
+[ext_resource type="AudioStream" uid="uid://qijvhotou8om" path="res://assets/dormies/Bloon.mp3" id="21_pxij2"]
+[ext_resource type="AudioStream" uid="uid://db4jwjrbj3ywt" path="res://assets/dormies/Crayo.mp3" id="22_p4s5p"]
 [ext_resource type="Texture2D" uid="uid://c026s0cjyrpmj" path="res://assets/mimibutton.png" id="23_7yan6"]
+[ext_resource type="AudioStream" uid="uid://b0ar67j0s8ef0" path="res://assets/dormies/Scar.mp3" id="23_45mar"]
 [ext_resource type="AudioStream" uid="uid://dyw1cak5hne4v" path="res://assets/mimigetworse.mp3" id="24_4h4vs"]
+[ext_resource type="AudioStream" uid="uid://coto5unk8u2ey" path="res://assets/dormies/Minty.mp3" id="24_om8x3"]
+[ext_resource type="AudioStream" uid="uid://dx51xn21uk85o" path="res://assets/dormies/MintysWife.mp3" id="25_g5gsk"]
+[ext_resource type="AudioStream" uid="uid://bcphrnc6afsun" path="res://assets/dormies/abbit.mp3" id="28_83tse"]
+[ext_resource type="AudioStream" uid="uid://574rfi81k0fs" path="res://assets/dormies/Drei.mp3" id="29_b31ro"]
+[ext_resource type="AudioStream" uid="uid://ddp8qehenq2uu" path="res://assets/dormies/TKBean.mp3" id="30_qcb4s"]
+[ext_resource type="AudioStream" uid="uid://frcjgagy4g1k" path="res://assets/dormies/Tobehz.mp3" id="31_yhtom"]
+[ext_resource type="AudioStream" uid="uid://c1061b05aeqqj" path="res://assets/dormies/Kingjah.mp3" id="32_p6j34"]
+[ext_resource type="AudioStream" uid="uid://clk03c81v1qa6" path="res://assets/dormies/Chiaki.mp3" id="33_j17dg"]
+[ext_resource type="AudioStream" uid="uid://clxv6jcdht66x" path="res://assets/dormies/dede.mp3" id="34_a2y63"]
+[ext_resource type="AudioStream" uid="uid://dlns5jmdw17xy" path="res://assets/dormies/Naka.mp3" id="35_b31ro"]
+[ext_resource type="AudioStream" uid="uid://wegi2peoabhn" path="res://assets/dormies/weaboodanger.mp3" id="36_p6j34"]
+[ext_resource type="AudioStream" uid="uid://cbxnmtoymksak" path="res://assets/dormies/JBHUTT.mp3" id="37_j17dg"]
+[ext_resource type="AudioStream" uid="uid://cqjuvk510lg3b" path="res://assets/dormies/Boba.mp3" id="38_a2y63"]
 
 [sub_resource type="Theme" id="Theme_v6p8y"]
 
@@ -655,6 +672,15 @@ offset_bottom = 120.0
 theme_override_font_sizes/font_size = 12
 text = "<"
 
+[node name="NextExtraButton2" type="Button" parent="ExtrasTab2/InnerColor" unique_id=1974363747]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 97.0
+offset_right = 469.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 12
+text = ">"
+
 [node name="RichTextLabel2" type="RichTextLabel" parent="ExtrasTab2/InnerColor" unique_id=1276007094]
 z_index = 1
 layout_mode = 0
@@ -670,9 +696,9 @@ vertical_alignment = 1
 
 [node name="KBarn" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=1047151019]
 layout_mode = 0
-offset_left = 41.0
+offset_left = 26.0
 offset_top = 51.0
-offset_right = 117.0
+offset_right = 102.0
 offset_bottom = 82.0
 theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
 theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
@@ -684,9 +710,9 @@ stream = ExtResource("12_kvwfe")
 
 [node name="Lam" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=1191268218]
 layout_mode = 0
-offset_left = 41.0
+offset_left = 26.0
 offset_top = 82.0
-offset_right = 117.0
+offset_right = 91.0
 offset_bottom = 113.0
 theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
 theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
@@ -698,9 +724,9 @@ stream = ExtResource("13_l4tom")
 
 [node name="mistfist" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=1041192171]
 layout_mode = 0
-offset_left = 41.0
+offset_left = 26.0
 offset_top = 113.0
-offset_right = 117.0
+offset_right = 113.0
 offset_bottom = 144.0
 theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
 theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
@@ -712,9 +738,9 @@ stream = ExtResource("14_y8ura")
 
 [node name="plarty" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=1948791575]
 layout_mode = 0
-offset_left = 41.0
+offset_left = 26.0
 offset_top = 144.0
-offset_right = 128.0
+offset_right = 113.0
 offset_bottom = 175.0
 theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
 theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
@@ -726,9 +752,9 @@ stream = ExtResource("15_aav61")
 
 [node name="PrivateShorty" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=1718944507]
 layout_mode = 0
-offset_left = 129.0
+offset_left = 117.0
 offset_top = 51.0
-offset_right = 263.0
+offset_right = 251.0
 offset_bottom = 82.0
 theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
 theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
@@ -740,9 +766,9 @@ stream = ExtResource("16_a64np")
 
 [node name="Samby" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=1294389988]
 layout_mode = 0
-offset_left = 129.0
+offset_left = 117.0
 offset_top = 82.0
-offset_right = 263.0
+offset_right = 197.0
 offset_bottom = 113.0
 theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
 theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
@@ -754,9 +780,9 @@ stream = ExtResource("17_g2tdu")
 
 [node name="MegaDeuceX" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=796851688]
 layout_mode = 0
-offset_left = 129.0
+offset_left = 117.0
 offset_top = 113.0
-offset_right = 263.0
+offset_right = 247.0
 offset_bottom = 144.0
 theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
 theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
@@ -765,6 +791,90 @@ text = "MegaDeuceX"
 
 [node name="MegaDeuceX" type="AudioStreamPlayer" parent="ExtrasTab2/InnerColor/MegaDeuceX" unique_id=806284774]
 stream = ExtResource("18_y8ura")
+
+[node name="Tuna" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=211521680]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 144.0
+offset_right = 187.0
+offset_bottom = 175.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "Tuna"
+
+[node name="Tuna" type="AudioStreamPlayer" parent="ExtrasTab2/InnerColor/Tuna" unique_id=1736978707]
+stream = ExtResource("20_fd0ao")
+
+[node name="Bloon" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=92378806]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 51.0
+offset_right = 323.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "Bloon"
+
+[node name="Bloon" type="AudioStreamPlayer" parent="ExtrasTab2/InnerColor/Bloon" unique_id=757531963]
+stream = ExtResource("21_pxij2")
+
+[node name="Crayo" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=819719801]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 82.0
+offset_right = 323.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "Crayo"
+
+[node name="Crayo" type="AudioStreamPlayer" parent="ExtrasTab2/InnerColor/Crayo" unique_id=343979097]
+stream = ExtResource("22_p4s5p")
+
+[node name="Scar" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=134261208]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 113.0
+offset_right = 323.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "Scar"
+
+[node name="Scar" type="AudioStreamPlayer" parent="ExtrasTab2/InnerColor/Scar" unique_id=172795036]
+stream = ExtResource("23_45mar")
+
+[node name="Minty" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=1512531144]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 51.0
+offset_right = 397.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "Minty"
+
+[node name="Minty" type="AudioStreamPlayer" parent="ExtrasTab2/InnerColor/Minty" unique_id=1125488956]
+stream = ExtResource("24_om8x3")
+
+[node name="MintysWife" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=377312468]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 82.0
+offset_right = 447.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "Minty's Wife"
+
+[node name="MintysWife" type="AudioStreamPlayer" parent="ExtrasTab2/InnerColor/MintysWife" unique_id=376328144]
+stream = ExtResource("25_g5gsk")
 
 [node name="HardMode" type="CheckBox" parent="ExtrasTab2/InnerColor" unique_id=1883044680]
 layout_mode = 0
@@ -779,10 +889,10 @@ disabled = true
 [node name="WinButton" type="Button" parent="ExtrasTab2/InnerColor" unique_id=256337336]
 visible = false
 layout_mode = 0
-offset_left = 327.0
-offset_top = 90.0
-offset_right = 415.0
-offset_bottom = 166.0
+offset_left = 358.0
+offset_top = 119.0
+offset_right = 446.0
+offset_bottom = 178.0
 theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
 text = "You Win!"
 
@@ -819,10 +929,275 @@ text = "Check your Downloads folder for your full prize!"
 visible = false
 z_index = 3
 layout_mode = 0
-offset_left = 318.0
-offset_top = 68.0
-offset_right = 525.0
-offset_bottom = 106.0
+offset_left = 217.0
+offset_top = 161.0
+offset_right = 372.0
+offset_bottom = 199.0
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+text = "Reward art by: Ink"
+
+[node name="ExtrasTab3" type="ColorRect" parent="." unique_id=1401925756]
+visible = false
+layout_mode = 0
+offset_left = 37.0
+offset_top = 397.0
+offset_right = 540.0
+offset_bottom = 636.0
+color = Color(1, 0.26666668, 0, 1)
+
+[node name="InnerColor" type="ColorRect" parent="ExtrasTab3" unique_id=344565902]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 488.0
+offset_bottom = 224.0
+color = Color(1, 0.6156863, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ExtrasTab3/InnerColor" unique_id=1218013346]
+z_index = 1
+layout_mode = 0
+offset_left = 39.0
+offset_top = -1.0
+offset_right = 214.0
+offset_bottom = 48.0
+theme_override_colors/default_color = Color(1, 0.80784315, 0, 1)
+text = "Thank you to all contibuting Dormies!
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="ExtrasTab3/InnerColor" unique_id=1048995169]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 3.0
+offset_right = 470.0
+offset_bottom = 35.0
+text = "X"
+
+[node name="BackExtraButton2" type="Button" parent="ExtrasTab3/InnerColor" unique_id=1611070003]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 95.0
+offset_right = 20.0
+offset_bottom = 120.0
+theme_override_font_sizes/font_size = 12
+text = "<"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="ExtrasTab3/InnerColor" unique_id=966605793]
+z_index = 1
+layout_mode = 0
+offset_left = 222.0
+offset_top = -1.0
+offset_right = 433.0
+offset_bottom = 48.0
+theme_override_colors/default_color = Color(1, 0.80784315, 0, 1)
+text = "Beat Hard Mode and Collect them all for a gift!
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="abbit" type="CheckBox" parent="ExtrasTab3/InnerColor" unique_id=567044992]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 51.0
+offset_right = 102.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "abbit"
+
+[node name="abbit" type="AudioStreamPlayer" parent="ExtrasTab3/InnerColor/abbit" unique_id=1688401345]
+stream = ExtResource("28_83tse")
+
+[node name="Drei" type="CheckBox" parent="ExtrasTab3/InnerColor" unique_id=1198717885]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 82.0
+offset_right = 91.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "Drei"
+
+[node name="Drei" type="AudioStreamPlayer" parent="ExtrasTab3/InnerColor/Drei" unique_id=445509937]
+stream = ExtResource("29_b31ro")
+
+[node name="TKBean" type="CheckBox" parent="ExtrasTab3/InnerColor" unique_id=421420298]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 113.0
+offset_right = 113.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "TKBean"
+
+[node name="TKBean" type="AudioStreamPlayer" parent="ExtrasTab3/InnerColor/TKBean" unique_id=613816610]
+stream = ExtResource("30_qcb4s")
+
+[node name="Tobehz" type="CheckBox" parent="ExtrasTab3/InnerColor" unique_id=1601516213]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 144.0
+offset_right = 113.0
+offset_bottom = 175.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "Tobehz"
+
+[node name="Tobehz" type="AudioStreamPlayer" parent="ExtrasTab3/InnerColor/Tobehz" unique_id=1099222695]
+stream = ExtResource("31_yhtom")
+
+[node name="Kingjah" type="CheckBox" parent="ExtrasTab3/InnerColor" unique_id=36740319]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 51.0
+offset_right = 251.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "Kingjah"
+
+[node name="Kingjah" type="AudioStreamPlayer" parent="ExtrasTab3/InnerColor/Kingjah" unique_id=303415146]
+stream = ExtResource("32_p6j34")
+
+[node name="Chiaki" type="CheckBox" parent="ExtrasTab3/InnerColor" unique_id=991111511]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 82.0
+offset_right = 197.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "Chiaki"
+
+[node name="Chiaki" type="AudioStreamPlayer" parent="ExtrasTab3/InnerColor/Chiaki" unique_id=1123054765]
+stream = ExtResource("33_j17dg")
+
+[node name="dede" type="CheckBox" parent="ExtrasTab3/InnerColor" unique_id=753964913]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 113.0
+offset_right = 247.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "dede"
+
+[node name="dede" type="AudioStreamPlayer" parent="ExtrasTab3/InnerColor/dede" unique_id=632978837]
+stream = ExtResource("34_a2y63")
+
+[node name="Naka" type="CheckBox" parent="ExtrasTab3/InnerColor" unique_id=175715925]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 144.0
+offset_right = 187.0
+offset_bottom = 175.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "Naka"
+
+[node name="Naka" type="AudioStreamPlayer" parent="ExtrasTab3/InnerColor/Naka" unique_id=1137285426]
+stream = ExtResource("35_b31ro")
+
+[node name="weaboodanger" type="CheckBox" parent="ExtrasTab3/InnerColor" unique_id=487699106]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 51.0
+offset_right = 372.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "weaboodanger"
+
+[node name="weaboodanger" type="AudioStreamPlayer" parent="ExtrasTab3/InnerColor/weaboodanger" unique_id=262434052]
+stream = ExtResource("36_p6j34")
+
+[node name="JBHUTT" type="CheckBox" parent="ExtrasTab3/InnerColor" unique_id=1164623742]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 82.0
+offset_right = 301.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "JBHUTT"
+
+[node name="JBHUTT" type="AudioStreamPlayer" parent="ExtrasTab3/InnerColor/JBHUTT" unique_id=348214226]
+stream = ExtResource("37_j17dg")
+
+[node name="Boba" type="CheckBox" parent="ExtrasTab3/InnerColor" unique_id=2140814386]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 113.0
+offset_right = 301.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+text = "Boba"
+
+[node name="Boba" type="AudioStreamPlayer" parent="ExtrasTab3/InnerColor/Boba" unique_id=312501618]
+stream = ExtResource("38_a2y63")
+
+[node name="HardMode" type="CheckBox" parent="ExtrasTab3/InnerColor" unique_id=673627462]
+layout_mode = 0
+offset_left = 225.0
+offset_top = -2.0
+offset_right = 359.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+theme_override_colors/font_disabled_color = Color(1, 0.80784315, 0, 0.4392157)
+disabled = true
+
+[node name="WinButton2" type="Button" parent="ExtrasTab3/InnerColor" unique_id=451821919]
+visible = false
+layout_mode = 0
+offset_left = 358.0
+offset_top = 119.0
+offset_right = 446.0
+offset_bottom = 178.0
+theme_override_colors/font_color = Color(1, 0.80784315, 0, 1)
+text = "You Win!"
+
+[node name="MimiButton" type="Button" parent="ExtrasTab3/InnerColor" unique_id=1195981947]
+visible = false
+layout_mode = 0
+offset_left = 38.0
+offset_top = -407.0
+offset_right = 918.0
+offset_bottom = 474.0
+scale = Vector2(0.45, 0.45)
+icon = ExtResource("18_l4tom")
+
+[node name="DownloadLabel" type="RichTextLabel" parent="ExtrasTab3" unique_id=904649338]
+visible = false
+layout_mode = 0
+offset_left = 71.0
+offset_top = 196.0
+offset_right = 450.0
+offset_bottom = 234.0
+theme_override_colors/default_color = Color(1, 0, 0, 1)
+text = "Check your Downloads folder for your full prize!"
+
+[node name="DownloadLabel2" type="RichTextLabel" parent="ExtrasTab3" unique_id=915525118]
+visible = false
+z_index = 3
+layout_mode = 0
+offset_left = 217.0
+offset_top = 161.0
+offset_right = 372.0
+offset_bottom = 199.0
 theme_override_colors/default_color = Color(1, 0, 0, 1)
 text = "Reward art by: Ink"
 
@@ -1447,6 +1822,7 @@ flat = true
 [connection signal="pressed" from="ExtrasTab/InnerColor/NextExtraButton" to="." method="_on_next_extra_button_pressed"]
 [connection signal="pressed" from="ExtrasTab2/InnerColor/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="pressed" from="ExtrasTab2/InnerColor/BackExtraButton" to="." method="_on_back_extra_button_pressed"]
+[connection signal="pressed" from="ExtrasTab2/InnerColor/NextExtraButton2" to="." method="_on_next_extra_button_2_pressed"]
 [connection signal="pressed" from="ExtrasTab2/InnerColor/KBarn" to="." method="_on_check_pressed" binds= ["KBarn"]]
 [connection signal="pressed" from="ExtrasTab2/InnerColor/Lam" to="." method="_on_check_pressed" binds= ["Lam"]]
 [connection signal="pressed" from="ExtrasTab2/InnerColor/mistfist" to="." method="_on_check_pressed" binds= ["mistfist"]]
@@ -1454,9 +1830,30 @@ flat = true
 [connection signal="pressed" from="ExtrasTab2/InnerColor/PrivateShorty" to="." method="_on_check_pressed" binds= ["PrivateShorty"]]
 [connection signal="pressed" from="ExtrasTab2/InnerColor/Samby" to="." method="_on_check_pressed" binds= ["Samby"]]
 [connection signal="pressed" from="ExtrasTab2/InnerColor/MegaDeuceX" to="." method="_on_check_pressed" binds= ["MegaDeuceX"]]
+[connection signal="pressed" from="ExtrasTab2/InnerColor/Tuna" to="." method="_on_check_pressed" binds= ["Tuna"]]
+[connection signal="pressed" from="ExtrasTab2/InnerColor/Bloon" to="." method="_on_check_pressed" binds= ["Bloon"]]
+[connection signal="pressed" from="ExtrasTab2/InnerColor/Crayo" to="." method="_on_check_pressed" binds= ["Crayo"]]
+[connection signal="pressed" from="ExtrasTab2/InnerColor/Scar" to="." method="_on_check_pressed" binds= ["Scar"]]
+[connection signal="pressed" from="ExtrasTab2/InnerColor/Minty" to="." method="_on_check_pressed" binds= ["Minty"]]
+[connection signal="pressed" from="ExtrasTab2/InnerColor/MintysWife" to="." method="_on_check_pressed" binds= ["MintysWife"]]
 [connection signal="pressed" from="ExtrasTab2/InnerColor/WinButton" to="." method="_on_win_button_pressed"]
 [connection signal="pressed" from="ExtrasTab2/InnerColor/MimiButton" to="." method="_on_mimi_art_pressed"]
 [connection signal="pressed" from="ExtrasTab2/InnerColor/BonusButton" to="." method="_on_bonus_button_pressed"]
+[connection signal="pressed" from="ExtrasTab3/InnerColor/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="ExtrasTab3/InnerColor/BackExtraButton2" to="." method="_on_back_extra_button_2_pressed"]
+[connection signal="pressed" from="ExtrasTab3/InnerColor/abbit" to="." method="_on_check_pressed" binds= ["abbit"]]
+[connection signal="pressed" from="ExtrasTab3/InnerColor/Drei" to="." method="_on_check_pressed" binds= ["Drei"]]
+[connection signal="pressed" from="ExtrasTab3/InnerColor/TKBean" to="." method="_on_check_pressed" binds= ["TKBean"]]
+[connection signal="pressed" from="ExtrasTab3/InnerColor/Tobehz" to="." method="_on_check_pressed" binds= ["Tobehz"]]
+[connection signal="pressed" from="ExtrasTab3/InnerColor/Kingjah" to="." method="_on_check_pressed" binds= ["Kingjah"]]
+[connection signal="pressed" from="ExtrasTab3/InnerColor/Chiaki" to="." method="_on_check_pressed" binds= ["Chiaki"]]
+[connection signal="pressed" from="ExtrasTab3/InnerColor/dede" to="." method="_on_check_pressed" binds= ["dede"]]
+[connection signal="pressed" from="ExtrasTab3/InnerColor/Naka" to="." method="_on_check_pressed" binds= ["Naka"]]
+[connection signal="pressed" from="ExtrasTab3/InnerColor/weaboodanger" to="." method="_on_check_pressed" binds= ["weaboodanger"]]
+[connection signal="pressed" from="ExtrasTab3/InnerColor/JBHUTT" to="." method="_on_check_pressed" binds= ["JBHUTT"]]
+[connection signal="pressed" from="ExtrasTab3/InnerColor/Boba" to="." method="_on_check_pressed" binds= ["Boba"]]
+[connection signal="pressed" from="ExtrasTab3/InnerColor/WinButton2" to="." method="_on_win_button_pressed"]
+[connection signal="pressed" from="ExtrasTab3/InnerColor/MimiButton" to="." method="_on_mimi_art_pressed"]
 [connection signal="pressed" from="BonusTab1/InnerColor/NextBonusButton" to="." method="_on_next_bonus_button_pressed"]
 [connection signal="pressed" from="BonusTab2/InnerColor/NextBonusButton2" to="." method="_on_next_bonus_button_2_pressed"]
 [connection signal="pressed" from="BonusTab2/InnerColor/BackBonusButton2" to="." method="_on_back_bonus_button_2_pressed"]

@@ -4,7 +4,11 @@ var num_wins = 0
 var num_mines: int = 0
 var dormies = [["KBarn", false], ["Lam", false], ["mistfist", false], 
 ["plarty", false], ["PrivateShorty", false], ["Samby", false], 
-["MegaDeuceX", false]]
+["MegaDeuceX", false], ["Tuna", false], ["Bloon", false],
+["Crayo", false], ["Scar", false], ["Minty", false], ["MintysWife", false],
+["abbit", false], ["Drei", false], ["dede", false], ["TKBean", false],
+["Tobehz", false], ["Kingjah", false], ["Chiaki", false],
+["Naka", false], ["weaboodanger", false], ["JBHUTT", false],["Boba", false]]
 var mute_bgm = false
 var mute_sound = false
 var mimi_love = false
@@ -34,7 +38,17 @@ func load_game():
 	var content = save_game.get_var()
 	print(content)
 	num_wins = content.get("num_wins")
-	dormies = content.get("dormies")
+	var tempDorm = content.get("dormies")
+	if tempDorm.size() == dormies.size():
+		dormies = tempDorm
+	else:
+		var size = dormies.size()
+		while(tempDorm.size() < size):
+			var pop = dormies.pop_back()
+			tempDorm.append(pop)
+		dormies = tempDorm
+		save_game()
+		
 	mute_bgm = content.get("mute_bgm")
 	mute_sound = content.get("mute_sound")
 	mimi_love = content.get("mimi_love")

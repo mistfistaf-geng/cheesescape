@@ -1,6 +1,5 @@
 extends Control
 
-@onready var req := $HTTPRequest
 @onready var click = get_node("Click")
 @onready var getWorse = get_node("BonusTab5/InnerColor/Mimigetworse")
 
@@ -78,6 +77,7 @@ func _on_close_button_pressed() -> void:
 	$HowToPlayTab3.visible = false
 	$ExtrasTab.visible = false
 	$ExtrasTab2.visible = false
+	$ExtrasTab3.visible = false
 	$MainMenuTab/NewGameButton.disabled = false
 	$MainMenuTab/HowToPlayButton.disabled = false
 	$MainMenuTab/ExtraButton.disabled = false
@@ -144,11 +144,13 @@ func _on_next_extra_button_pressed() -> void:
 	var numFound = 0
 	for dormie in Global.dormies:
 		if dormie[1] == true:
-			var button = get_node("ExtrasTab2/InnerColor/"+dormie[0])
-			button.button_pressed = true
-			button.disabled = false
+			var button
+			if get_node("ExtrasTab2/InnerColor/"+dormie[0]) != null:
+				button = get_node("ExtrasTab2/InnerColor/"+dormie[0])
+				button.button_pressed = true
+				button.disabled = false
 			numFound += 1
-	if numFound == 7 and $ExtrasTab2/InnerColor/HardMode.button_pressed:
+	if numFound == 24 and $ExtrasTab2/InnerColor/HardMode.button_pressed:
 		$ExtrasTab2/InnerColor/WinButton.visible = true
 
 func _on_back_extra_button_pressed() -> void:
@@ -157,11 +159,42 @@ func _on_back_extra_button_pressed() -> void:
 	$ExtrasTab.visible = true
 	$ExtrasTab2.visible = false
 
+func _on_next_extra_button_2_pressed() -> void:
+	if not Global.mute_sound:
+		click.play()
+	$ExtrasTab2.visible = false
+	$ExtrasTab3.visible = true
+	if Global.num_wins >= 3:
+		$ExtrasTab3/InnerColor/HardMode.button_pressed = true
+	var numFound = 0
+	for dormie in Global.dormies:
+		if dormie[1] == true:
+			var button
+			if get_node("ExtrasTab3/InnerColor/"+dormie[0]) != null:
+				button = get_node("ExtrasTab3/InnerColor/"+dormie[0])
+				button.button_pressed = true
+				button.disabled = false
+			numFound += 1
+	if numFound == 24 and $ExtrasTab3/InnerColor/HardMode.button_pressed:
+		$ExtrasTab3/InnerColor/WinButton2.visible = true
 
+func _on_back_extra_button_2_pressed() -> void:
+	if not Global.mute_sound:
+		click.play()
+	$ExtrasTab2.visible = true
+	$ExtrasTab3.visible = false
+	
 func _on_check_pressed(check: String) -> void:
-	var button = get_node("ExtrasTab2/InnerColor/"+check)
-	button.button_pressed = true
-	var explosion = get_node("ExtrasTab2/InnerColor/"+check+"/"+check)
+	var button
+	var explosion
+	if get_node("ExtrasTab2/InnerColor/"+check) != null:
+		button = get_node("ExtrasTab2/InnerColor/"+check)
+		button.button_pressed = true
+		explosion = get_node("ExtrasTab2/InnerColor/"+check+"/"+check)
+	else:
+		button = get_node("ExtrasTab3/InnerColor/"+check)
+		button.button_pressed = true
+		explosion = get_node("ExtrasTab3/InnerColor/"+check+"/"+check)
 	if not Global.mute_sound:
 		explosion.play()
 
@@ -171,19 +204,22 @@ func _on_win_button_pressed() -> void:
 		click.play()
 	$ExtrasTab2/InnerColor/MimiButton.visible = true
 	$ExtrasTab2/DownloadLabel2.visible = true
-
+	$ExtrasTab3/InnerColor/MimiButton.visible = true
+	$ExtrasTab3/DownloadLabel2.visible = true
+	
 
 func _on_mimi_art_pressed() -> void:
 	if not Global.mute_sound:
 		click.play()
 	var export_image := OS.get_system_dir(OS.SYSTEM_DIR_DOWNLOADS) +"/InkBirthdayArt.png"
-	var img: Image = load("res://assets/inkartwip.png").get_image()
+	var img: Image = load("res://assets/Cheescape_prizeHD.png").get_image()
 	var os = OS.get_name()
 	if os == "Windows":
 		print(img.save_png(export_image))
 	elif os == "Web":
 		JavaScriptBridge.download_buffer(img.save_png_to_buffer(), "InkBirthdayArt.png", "image/png")
 	$ExtrasTab2/DownloadLabel.visible = true
+	$ExtrasTab3/DownloadLabel.visible = true
 
 
 func _on_mute_bgm_pressed() -> void:

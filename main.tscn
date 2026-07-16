@@ -12,7 +12,24 @@
 [ext_resource type="AudioStream" uid="uid://dhwqxw5j5tqer" path="res://assets/click.mp3" id="9_kek77"]
 [ext_resource type="AudioStream" uid="uid://bnolyj5d1kdra" path="res://assets/WhiteGirlWednesdayWhistle.mp3" id="10_4c57u"]
 [ext_resource type="AudioStream" uid="uid://cgng5kv2xgafo" path="res://assets/tock.mp3" id="10_efxa6"]
+[ext_resource type="AudioStream" uid="uid://cmt42lfe577wg" path="res://assets/dormies/Tuna.mp3" id="10_w48qg"]
+[ext_resource type="AudioStream" uid="uid://qijvhotou8om" path="res://assets/dormies/Bloon.mp3" id="11_cegan"]
+[ext_resource type="AudioStream" uid="uid://db4jwjrbj3ywt" path="res://assets/dormies/Crayo.mp3" id="12_82xsv"]
+[ext_resource type="AudioStream" uid="uid://b0ar67j0s8ef0" path="res://assets/dormies/Scar.mp3" id="13_getpj"]
 [ext_resource type="AudioStream" uid="uid://dyw1cak5hne4v" path="res://assets/mimigetworse.mp3" id="13_ycdy4"]
+[ext_resource type="AudioStream" uid="uid://coto5unk8u2ey" path="res://assets/dormies/Minty.mp3" id="14_ryguw"]
+[ext_resource type="AudioStream" uid="uid://dx51xn21uk85o" path="res://assets/dormies/MintysWife.mp3" id="15_d13ii"]
+[ext_resource type="AudioStream" uid="uid://bcphrnc6afsun" path="res://assets/dormies/abbit.mp3" id="16_lswn8"]
+[ext_resource type="AudioStream" uid="uid://clk03c81v1qa6" path="res://assets/dormies/Chiaki.mp3" id="17_a6jrf"]
+[ext_resource type="AudioStream" uid="uid://clxv6jcdht66x" path="res://assets/dormies/dede.mp3" id="18_xuqvo"]
+[ext_resource type="AudioStream" uid="uid://574rfi81k0fs" path="res://assets/dormies/Drei.mp3" id="19_qsp4k"]
+[ext_resource type="AudioStream" uid="uid://c1061b05aeqqj" path="res://assets/dormies/Kingjah.mp3" id="20_kq58d"]
+[ext_resource type="AudioStream" uid="uid://ddp8qehenq2uu" path="res://assets/dormies/TKBean.mp3" id="21_seu75"]
+[ext_resource type="AudioStream" uid="uid://frcjgagy4g1k" path="res://assets/dormies/Tobehz.mp3" id="22_htxhm"]
+[ext_resource type="AudioStream" uid="uid://dlns5jmdw17xy" path="res://assets/dormies/Naka.mp3" id="23_a6jrf"]
+[ext_resource type="AudioStream" uid="uid://wegi2peoabhn" path="res://assets/dormies/weaboodanger.mp3" id="24_kq58d"]
+[ext_resource type="AudioStream" uid="uid://cbxnmtoymksak" path="res://assets/dormies/JBHUTT.mp3" id="25_seu75"]
+[ext_resource type="AudioStream" uid="uid://cqjuvk510lg3b" path="res://assets/dormies/Boba.mp3" id="26_htxhm"]
 
 [node name="Main" type="Node2D" unique_id=17708068]
 
@@ -132,6 +149,57 @@ stream = ExtResource("7_dg77c")
 
 [node name="MegaDeuceX" type="AudioStreamPlayer" parent="Game" unique_id=79342137]
 stream = ExtResource("8_5vw27")
+
+[node name="Tuna" type="AudioStreamPlayer" parent="Game" unique_id=1921192408]
+stream = ExtResource("10_w48qg")
+
+[node name="Bloon" type="AudioStreamPlayer" parent="Game" unique_id=663740447]
+stream = ExtResource("11_cegan")
+
+[node name="Crayo" type="AudioStreamPlayer" parent="Game" unique_id=1250300092]
+stream = ExtResource("12_82xsv")
+
+[node name="Scar" type="AudioStreamPlayer" parent="Game" unique_id=1580144907]
+stream = ExtResource("13_getpj")
+
+[node name="Minty" type="AudioStreamPlayer" parent="Game" unique_id=1408684148]
+stream = ExtResource("14_ryguw")
+
+[node name="MintysWife" type="AudioStreamPlayer" parent="Game" unique_id=1152359740]
+stream = ExtResource("15_d13ii")
+
+[node name="abbit" type="AudioStreamPlayer" parent="Game" unique_id=342301966]
+stream = ExtResource("16_lswn8")
+
+[node name="Chiaki" type="AudioStreamPlayer" parent="Game" unique_id=2072748000]
+stream = ExtResource("17_a6jrf")
+
+[node name="dede" type="AudioStreamPlayer" parent="Game" unique_id=1899306488]
+stream = ExtResource("18_xuqvo")
+
+[node name="Drei" type="AudioStreamPlayer" parent="Game" unique_id=872299945]
+stream = ExtResource("19_qsp4k")
+
+[node name="Kingjah" type="AudioStreamPlayer" parent="Game" unique_id=855158821]
+stream = ExtResource("20_kq58d")
+
+[node name="TKBean" type="AudioStreamPlayer" parent="Game" unique_id=334083256]
+stream = ExtResource("21_seu75")
+
+[node name="Tobehz" type="AudioStreamPlayer" parent="Game" unique_id=1079622940]
+stream = ExtResource("22_htxhm")
+
+[node name="Naka" type="AudioStreamPlayer" parent="Game" unique_id=1361166015]
+stream = ExtResource("23_a6jrf")
+
+[node name="weaboodanger" type="AudioStreamPlayer" parent="Game" unique_id=953036990]
+stream = ExtResource("24_kq58d")
+
+[node name="JBHUTT" type="AudioStreamPlayer" parent="Game" unique_id=1610506385]
+stream = ExtResource("25_seu75")
+
+[node name="Boba" type="AudioStreamPlayer" parent="Game" unique_id=326523901]
+stream = ExtResource("26_htxhm")
 
 [node name="Click" type="AudioStreamPlayer" parent="Game" unique_id=888110208]
 stream = ExtResource("9_kek77")
